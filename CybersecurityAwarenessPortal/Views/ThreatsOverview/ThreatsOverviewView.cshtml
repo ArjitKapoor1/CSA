@@ -1,0 +1,97 @@
+﻿
+@{
+    ViewBag.Title = "Threats Overview";
+}
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <style>
+        body {
+            font: 400 15px Lato, sans-serif;
+            line-height: 1.8;
+            color: #818181;
+            font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        }
+
+        h2 {
+            font-size: 24px;
+            color: blue;
+            font-weight: 500;
+            margin-bottom: 30px;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif
+        }
+
+        .container-fluid {
+            padding: 60px 50px;
+            top: 150px;
+        }
+
+        .bg-grey {
+            background-color: #f6f6f6;
+        }
+
+        .thumbnail {
+            padding: 0 0 15px 0;
+            border: none;
+            border-radius: 0;
+        }
+
+            .thumbnail img {
+                width: 100%;
+                height: 100%;
+                margin-bottom: 10px;
+            }
+
+        img #internet {
+            height: 120%;
+        }
+
+        .navbar {
+            margin-bottom: 0;
+            background-color: #f4511e;
+            z-index: 9999;
+            border: 0;
+            font-size: 13px !important;
+            line-height: 1.42857143 !important;
+            border-radius: 0;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        }
+
+        .slideanim {
+            visibility: visible;
+        }
+    </style>
+</head>
+<body>
+    <div id="portfolio" class="container-fluid text-center bg-grey">
+        <div class="row">
+            <div class="col-sm-8">
+                <h2>Threats Overview</h2><br>
+                <p>
+                    One thing that's done every year is the Ponemon Institute Cost of Data Breach Study.
+                    It's a very interesting study because they found that only 47% of data breaches were malicious.
+                    53%, or the majority, was not malicious in any way. So, 28% of them are human error, which we'll
+                    get to in a bit, and 25% are process failure. Process failure basically means you bought a
+                    product and you never got it deployed, or you bought something and you never put it in place. So
+                    something like if you purchase a security system but you never armed that security system.
+                </p>
+                <img src="~/RootCauses.png" style=" width:500px;" class="img-fluid" />
+                <br />
+                <p>
+                    Human error, on the other hand, can be lost or stolen devices, most commonly. Most people think
+                    when it comes to losing or having a device stolen, it's going to be lost or stolen from a coffee
+                    or the airport, or somewhere where the user doesn't necessarily feel as safe. In fact, the majority
+                    of devices are lost and stolen from work areas or vehicles. So, places where people wouldn't expect their
+                    devices to be lost or stolen from. Especially the work area is very surprising to most people.
+                </p>
+                <a class="btn btn-danger" href="@Url.Action("Index","Home")">Home &raquo;</a>
+            </div>
+        </div>
+    </div>
+
+</body>

@@ -1,0 +1,96 @@
+﻿@{
+    ViewBag.Title = "Home";
+}
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <style>
+        body {
+            font: 400 15px Lato, sans-serif;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            line-height: 1.8;
+            color: #818181;
+        }
+
+        h2 {
+            font-size: 24px;
+            color: #303030;
+            font-weight: 600;
+            margin-bottom: 30px;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif
+        }
+
+        .container-fluid {
+            padding: 60px 50px;
+            top: 150px;
+        }
+
+        .bg-grey {
+            background-color: #f6f6f6;
+        }
+
+        .thumbnail {
+            padding: 0 0 15px 0;
+            border: none;
+            border-radius: 0;
+        }
+
+            .thumbnail img {
+                width: 100%;
+                height: 100%;
+                margin-bottom: 10px;
+            }
+
+        .slideanim {
+            visibility: visible;
+        }
+    </style>
+</head>
+<div class="jumbotron" style="background-image:url('../../Banking.png');">
+    <a href="https://www.tangerine.ca/en/index.html"> <img src="~/Tangerine.png" style="width:200px;" /> </a>
+    <p class="lead" style="color: white; font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif">
+        At Tangerine, we’re committed to helping Canadians live better lives.
+        It’s why we come in to work each and every day. And it’s our purpose for delivering forward banking to Canadians.
+        We can only do this by making some important promises, and more importantly, by keeping them!
+    </p>
+    <p style="font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif"><a href="https://www.tangerine.ca/en/index.html" class="btn btn-info btn-lg">Learn more &raquo;</a></p>
+</div>
+
+
+<div id="portfolio" class="container-fluid text-center bg-grey">
+    
+    <div class="row text-center slideanim">
+        <div class="col-sm-4">
+            <div class="thumbnail">
+                <img src="~/Cybersecurity.jpg" @*alt="Paris"*@ style="width:400px; height:250px;" width="400" height="300">
+                <p>
+                    <strong>
+                        Learn About Cybersecurity Measures And Take Our Interactive Quiz.
+                    </strong>
+                </p>
+                <a class="btn btn-info" href="@Url.Action("ContentView","Content")" @*href="https://go.microsoft.com/fwlink/?LinkId=301865"*@>Learn Modules &raquo;</a>
+            </div>
+        </div>
+
+        <div class="col-sm-4">
+            <div class="thumbnail">
+                <img src="~/Progress.png" alt="New York" style="width:400px;height:250px;">
+                <p><strong>See Your Progress, See The Modules You Have Completed, Your Results etc.</strong></p>
+                <a class="btn btn-info" @*href="@Url.Action("ContentView","Content")"*@>Progress &raquo;</a>
+            </div>
+        </div>
+
+        <div class="col-sm-4">
+            <div class="thumbnail">
+                <img src="~/Admin.png" alt="New York" style="width:400px;height:250px;" >
+                <p><strong>Login For The Administrators To See Usage Statistics, User Progress, Server Status etc.</strong></p>
+                <a class="btn btn-info" @*href="@Url.Action("ContentView","Content")"*@>Login &raquo;</a>
+            </div>
+        </div>
+    </div>
+</div>
