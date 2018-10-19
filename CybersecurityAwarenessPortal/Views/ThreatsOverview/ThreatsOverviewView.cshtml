@@ -1,4 +1,4 @@
-﻿
+﻿@*@model CybersecurityAwarenessPortal.Models.ThreatsOverviewModel*@
 @{
     ViewBag.Title = "Threats Overview";
 }
@@ -15,7 +15,7 @@
             font: 400 15px Lato, sans-serif;
             line-height: 1.8;
             color: #818181;
-            font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
         }
 
         h2 {
@@ -70,18 +70,20 @@
 <body>
     <div id="portfolio" class="container-fluid text-center bg-grey">
         <div class="row">
-            <div class="col-sm-8">
+            <div @*class="col-sm-8"*@>
                 <h2>Threats Overview</h2><br>
                 <p>
                     One thing that's done every year is the Ponemon Institute Cost of Data Breach Study.
+                    <img src="~/RootCauses.PNG" style=" width:400px; float:right" class="img-responsive" />
                     It's a very interesting study because they found that only 47% of data breaches were malicious.
                     53%, or the majority, was not malicious in any way. So, 28% of them are human error, which we'll
                     get to in a bit, and 25% are process failure. Process failure basically means you bought a
                     product and you never got it deployed, or you bought something and you never put it in place. So
                     something like if you purchase a security system but you never armed that security system.
                 </p>
-                <img src="~/RootCauses.png" style=" width:500px;" class="img-fluid" />
                 <br />
+                </div>
+            <div class="col-sm-8">
                 <p>
                     Human error, on the other hand, can be lost or stolen devices, most commonly. Most people think
                     when it comes to losing or having a device stolen, it's going to be lost or stolen from a coffee
