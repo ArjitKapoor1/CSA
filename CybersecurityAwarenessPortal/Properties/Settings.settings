@@ -1,0 +1,21 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="CybersecurityAwarenessPortal.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="DropboxAppKey" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">gmpylnm7gi0koc1</Value>
+    </Setting>
+    <Setting Name="DropboxSecretKey" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">4nq2eqvzrbq1901</Value>
+    </Setting>
+    <Setting Name="DropboxAccessToken" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">7kMXo6UIrpAAAAAAAAAADufQ3WU6ip2bdt5_UpcB826aDYqx46Zjg_Pp7_sZcXaY</Value>
+    </Setting>
+    <Setting Name="GoogleClientID" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">766480117633-tsmgr5g1os77996hc09bcggbmjq08srl.apps.googleusercontent.com</Value>
+    </Setting>
+    <Setting Name="GoogleSecretKey" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">FKGfAuhf3HD1GFS-EyfK8aPH</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>
