@@ -1,0 +1,126 @@
+﻿
+@{
+    ViewBag.Title = "Phishing";
+}
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <style>
+        body {
+            font: 400 15px Lato, sans-serif;
+            line-height: 1.8;
+            color: #818181;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        }
+
+        h2 {
+            font-size: 24px;
+            color: blue;
+            font-weight: 500;
+            margin-bottom: 30px;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif
+        }
+
+        .container-fluid {
+            padding: 60px 50px;
+            top: 150px;
+        }
+
+        .bg-grey {
+            background-color: #f6f6f6;
+        }
+
+        .thumbnail {
+            padding: 0 0 15px 0;
+            border: none;
+            border-radius: 0;
+        }
+
+            .thumbnail img {
+                width: 100%;
+                height: 100%;
+                margin-bottom: 10px;
+            }
+
+        img #internet {
+            height: 120%;
+        }
+
+        .navbar {
+            margin-bottom: 0;
+            background-color: #f4511e;
+            z-index: 9999;
+            border: 0;
+            font-size: 15px !important;
+            line-height: 1.42857143 !important;
+            border-radius: 0;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        }
+
+        .slideanim {
+            visibility: visible;
+        }
+    </style>
+</head>
+<body>
+    <div id="portfolio" class="container-fluid text-center bg-grey">
+        <div class="row">
+            <h2> Phishing </h2>
+            <div @*class="col-sm-8"*@>
+                <p>
+                    In real life is the act of setting the bait (trap) , casting it out into a wide ocean and hoping that something bites that you can then hook.
+                    In Cybersecurity it is intentionally deceiving someone by posing as a legitimate company.
+                    Typically, utilizes email by pretending to be a company or service requesting you to do something.
+                    Hoping that you click the link and fill out the requested info.
+            </div><br />
+            <div @*class="col-sm-8"*@>
+                <p>
+                    Nowadays, phishing and spam kind of go hand in hand. 54% of all inbound email is spam. The spam types change. Every year, they change from different categories.
+                    Now, because people are more concerned about their health, we see spam in the health category being the highest amount of spam received. One in 20 email messages has malicious content in them.
+                    When you talk to people about spam and phishing emails, they all say, "I don't open emails that I don't know where they come from. I definitely don't open the attachments that come with those emails from unknown senders."
+                    <img src="~/Images/PhishinStats.PNG" style="width:380px;display:block; margin-left:auto; margin-right:auto;" class="img-responsive" />
+                </p>
+            </div><br />
+
+            <div @*class="col-sm-8"*@>
+                <p>
+                    Verizon 2016 Data Breach Report showed that 30% of people open phishing emails. That's up 7% from last year.
+                    12% of people open attachments. That's up 1% from last year. So, despite people saying that they don't open these emails and they don't open the attachments, they are.
+                    Phishing and spam are just going to keep getting worse if they can send out an email, a malicious email, or a phishing email, and 1 in 3 people are going to open that.
+                    <img src="~/Images/PhishingStats.PNG" style="width:380px;display:block; margin-left:auto; margin-right:auto;" class="img-responsive" />
+                </p>
+            </div><br />
+
+            <h2>Phishing Examples</h2>
+            <div @*class="col-sm-8"*@>
+                <p>
+                    So, what should you be looking out for with phishing emails? First, look at the sender. See, is it actually who it says?
+                    Yes, it says it's from PayPal but look at the domain name, the part after the @@ symbol. That is nothing to do with PayPal at all.
+                    Also, look for grammatical or spelling errors contained in the email. You'll notice that there’s several in there in this email.
+                    Then, if you mouse over the link, the login link at the bottom, you'll notice that it does not say paypal.com.
+                    So, these are few hints that you can take, that this email is probably not from the real PayPal.
+                    <img src="~/Images/PhishingEx1.PNG" style="width:450px;display:block; margin-left:auto; margin-right:auto;" class="img-responsive" />
+                </p>
+            </div><br />
+            <div @*class="col-sm-8"*@>
+                <p>
+                    Once you actually go to the link, there are even more signs. Don't believe the little icons at the bottom of the screen that say that the website is secure.
+                    Why would PayPal need your mother's maiden name and your social security number? They're phishing for information to take and utilize, and steal your identity, or use it elsewhere.
+                    <img src="~/Images/PhishingEx2.PNG" style="width:450px;display:block; margin-left:auto; margin-right:auto;" class="img-responsive" />
+                </p>
+            </div><br />
+            <img src="~/Images/PhishingTips.PNG" style="width:450px;display:block; margin-left:auto; margin-right:auto;" class="img-responsive" />
+        </div>
+
+
+        <div class="row" style="position:relative; top:30px;">
+            <a class="btn btn-danger" href="@Url.Action("ThreatsOverviewView","ThreatsOverview")">Back &raquo;</a>
+        </div>
+    </div>
+
+</body>

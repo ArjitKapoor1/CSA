@@ -1,0 +1,109 @@
+﻿
+@{
+    ViewBag.Title = "Social Engineering";
+}
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <style>
+        body {
+            font: 400 15px Lato, sans-serif;
+            line-height: 1.8;
+            color: #818181;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        }
+
+        h2 {
+            font-size: 24px;
+            color: blue;
+            font-weight: 500;
+            margin-bottom: 30px;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif
+        }
+
+        .container-fluid {
+            padding: 60px 50px;
+            top: 150px;
+        }
+
+        .bg-grey {
+            background-color: #f6f6f6;
+        }
+
+        .thumbnail {
+            padding: 0 0 15px 0;
+            border: none;
+            border-radius: 0;
+        }
+
+            .thumbnail img {
+                width: 100%;
+                height: 100%;
+                margin-bottom: 10px;
+            }
+
+        img #internet {
+            height: 120%;
+        }
+
+        .navbar {
+            margin-bottom: 0;
+            background-color: #f4511e;
+            z-index: 9999;
+            border: 0;
+            font-size: 15px !important;
+            line-height: 1.42857143 !important;
+            border-radius: 0;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        }
+
+        .slideanim {
+            visibility: visible;
+        }
+    </style>
+</head>
+<body>
+    <div id="portfolio" class="container-fluid text-center bg-grey">
+        <div class="row">
+            <h2> Social Engieering </h2>
+            <div @*class="col-sm-8"*@>
+                <p>
+                    Manipulation of people into divulging confidential or sensitive information. Most commonly done over email, but also regularly carried out over the phone
+                    Can be a slow gain of information or can attempt to gain all information needed at once
+            </div><br />
+
+            <h2>Socail Engieering Examples</h2>
+            <ul>
+                <li>
+                    An example of this is that someone calls the office and they ask the question, who is the boss or who the CEO is?
+                    They can then request his or her email address, maybe they request their phone number as well. Now, that attacker has the username as well as the name of the person
+                    that they need to target, in order to compromise the business. So, any pieces of information that they can grab, they can utilize in future attacks.
+                </li>
+                <br />
+                <li>
+                    Another common example is when a person walks into the office. They pretend to be a contractor. Due to his or her uniform, people assume that it’s okay and it's perfectly fine.
+                    Then, the person walks into a room with sensitive information, steals it, and can walk out of the office.
+                    So, lots of people don't realize that there's a problem when someone picks up the phone number or other pieces of sensitive data.
+                    Grabbing those pieces of information can be utilized to steal your identity, steal data related to your company, or do other malicious actions.
+                </li>
+
+            </ul><br />
+
+            <img src="~/Images/SocialEngTips.PNG" style="width:380px;display:block; margin-left:auto; margin-right:auto;" class="img-responsive" /> <br />
+            <h2>Cybersecurity Threats: </h2>
+            <hr />
+            <iframe width="560" height="315" src="http://www.youtube.com/embed/dVW1FNWSaTg" frameborder="0" allowfullscreen></iframe>
+        </div>
+
+
+        <div class="row" style="position:relative; top:30px;">
+            <a class="btn btn-danger" href="@Url.Action("ThreatsOverviewView","ThreatsOverview")">Back &raquo;</a>
+        </div>
+    </div>
+
+</body>

@@ -56,7 +56,7 @@
             background-color: #f4511e;
             z-index: 9999;
             border: 0;
-            font-size: 13px !important;
+            font-size: 15px !important;
             line-height: 1.42857143 !important;
             border-radius: 0;
             font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
@@ -69,30 +69,60 @@
 </head>
 <body>
     <div id="portfolio" class="container-fluid text-center bg-grey">
+        <h2 style="position:relative; top:0px;">Threats Overview</h2><br>
         <div class="row">
             <div @*class="col-sm-8"*@>
-                <h2>Threats Overview</h2><br>
                 <p>
                     One thing that's done every year is the Ponemon Institute Cost of Data Breach Study.
-                    <img src="~/RootCauses.PNG" style=" width:400px; float:right" class="img-responsive" />
                     It's a very interesting study because they found that only 47% of data breaches were malicious.
                     53%, or the majority, was not malicious in any way. So, 28% of them are human error, which we'll
                     get to in a bit, and 25% are process failure. Process failure basically means you bought a
                     product and you never got it deployed, or you bought something and you never put it in place. So
                     something like if you purchase a security system but you never armed that security system.
+                    <img src="~/RootCauses.PNG" style=" width:380px; display:block; margin-left:auto; margin-right:auto;" class="img-responsive" />
                 </p>
                 <br />
-                </div>
-            <div class="col-sm-8">
+            </div>
+            <div @*class="col-sm-8"*@>
                 <p>
                     Human error, on the other hand, can be lost or stolen devices, most commonly. Most people think
                     when it comes to losing or having a device stolen, it's going to be lost or stolen from a coffee
                     or the airport, or somewhere where the user doesn't necessarily feel as safe. In fact, the majority
                     of devices are lost and stolen from work areas or vehicles. So, places where people wouldn't expect their
                     devices to be lost or stolen from. Especially the work area is very surprising to most people.
+                    <img src="~/Images/SocialEng.PNG" style=" width:380px; display:block; margin-left:auto; margin-right:auto;" class="img-responsive" />
                 </p>
-                <a class="btn btn-danger" href="@Url.Action("Index","Home")">Home &raquo;</a>
             </div>
+
+        </div>
+
+        <div class="row text-center slideanim" style="position:relative; top:30px;">
+            <div class="col-sm-4">
+                <div class="thumbnail">
+                    <img src="~/Images/Malware.PNG" @*alt="Paris"*@ width="400" height="300">
+                    <p><strong> Malware</strong></p>
+                    <a class="btn btn-info" href="@Url.Action("MalwareView","Malware")">Learn Malware &raquo;</a>
+                </div>
+            </div>
+            <div class="col-sm-4">
+                <div class="thumbnail">
+                    <img src="~/Images/Phishing.PNG" alt="New York" width="400" height="300">
+                    <p><strong>Phishing</strong></p>
+                    <a class="btn btn-info" href="@Url.Action("PhishingView","Phishing")">Learn Phishing &raquo;</a>
+                </div>
+            </div>
+
+            <div class="col-sm-4">
+                <div class="thumbnail">
+                    <img src="~/Images/SEng.PNG" alt="New York" style="height:183px;" width="400" height="320" id="internet">
+                    <p><strong>Social Engineering</strong></p>
+                    <a class="btn btn-info" href="@Url.Action("SocialEngineeringView","SocialEngineering")">Learn Social Engineering &raquo;</a>
+                </div>
+            </div>
+        </div>
+        <div class="row" style="position:relative; top:30px;">
+            <a class="btn btn-success">Take The Quiz &raquo;</a>
+            <a class="btn btn-danger" href="@Url.Action("Index","Home")">Home &raquo;</a>
         </div>
     </div>
 
