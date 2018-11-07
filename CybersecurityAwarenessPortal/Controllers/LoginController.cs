@@ -34,11 +34,17 @@ namespace CybersecurityAwarenessPortal.Controllers
                 user.RememberMe = true;
             }
             else user.RememberMe = false;
-            
+
+         
             if (user.IsValid(user.Username, user.Password))
             {
                 FormsAuthentication.SetAuthCookie(user.Username, user.RememberMe);
                 Session["username"] = user.Username;
+                if (user.Username == "admin@tangerine.ca")
+                {
+                    Session["username"] = user.Username;
+                    return RedirectToAction("AdminView", "Admin");
+                }
                 return RedirectToAction("Index", "Home");
             }
             else

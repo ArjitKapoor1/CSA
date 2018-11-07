@@ -1,0 +1,123 @@
+﻿@model CybersecurityAwarenessPortal.Models.QuizOptionsModel
+
+@{
+    ViewBag.Title = "Edit Quiz Options";
+}
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="~/Content/sweetalert/sweet-alert.css" />
+    <script src="https://lipis.github.io/bootstrap-sweetalert/lib/sweet-alert.js"></script>
+    <link rel="stylesheet" href="https://lipis.github.io/bootstrap-sweetalert/lib/sweet-alert.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.0/sweetalert.min.js"></script>
+    <style>
+        body {
+            font: 400 15px Lato, sans-serif;
+            line-height: 1.8;
+            color: #818181;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        }
+
+        h2 {
+            font-size: 24px;
+            color: blue;
+            font-weight: 500;
+            margin-bottom: 30px;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif
+        }
+
+        .container-fluid {
+            padding: 60px 50px;
+            top: 150px;
+        }
+
+        .bg-grey {
+            background-color: #f6f6f6;
+        }
+
+        .thumbnail {
+            padding: 0 0 15px 0;
+            border: none;
+            border-radius: 0;
+        }
+
+            .thumbnail img {
+                width: 100%;
+                height: 100%;
+                margin-bottom: 10px;
+            }
+
+        img #internet {
+            height: 120%;
+        }
+
+        .navbar {
+            margin-bottom: 0;
+            background-color: #f4511e;
+            z-index: 9999;
+            border: 0;
+            font-size: 15px !important;
+            line-height: 1.42857143 !important;
+            border-radius: 0;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        }
+
+        .slideanim {
+            visibility: visible;
+        }
+    </style>
+</head>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    <div id="portfolio" class="container-fluid text-center bg-grey">
+        <div class="row">
+            <h2> Edit Quiz Options </h2>
+            <div class="form-horizontal">
+                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+                <div class="form-group">
+                    @Html.Label("Number Of Attempts", htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.numOfAttempts, new { htmlAttributes = new { @class = "form-control", required = true, autocomplete = "off" } })
+                        @Html.ValidationMessageFor(model => model.numOfAttempts, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    @Html.Label("Passing Percentage", htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.PassingPercentage, new { htmlAttributes = new { @class = "form-control", required = true, autocomplete = "off" } })
+                        @Html.ValidationMessageFor(model => model.PassingPercentage, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="col-md-10">
+                        <input type="submit" value="Update" class="btn btn-success" />
+                        <input type="button" value="Back" onclick="window.location.href='@Url.Action("AdminView", "Admin")';" class="btn btn-danger" />
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <script type="text/javascript">
+        var alertmsg = '@(TempData["Options"])';
+        if (alertmsg == "fail")
+        {
+            swal('Update Failed!', 'The Number Of Attempts Must Be Greater Than 0 And Passing Percentage Should Be In Between 0 and 100', 'error');
+        }
+        else if (alertmsg == "pass") {
+            swal('Update Successful!', 'Quiz Options Were Successfully Updated In The Database', 'success');
+        }
+    </script>
+}
+

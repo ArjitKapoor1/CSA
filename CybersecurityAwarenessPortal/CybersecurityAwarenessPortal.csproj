@@ -25,6 +25,8 @@
     <UseGlobalApplicationHostFile />
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
+    <ApplicationInsightsResourceId>/subscriptions/849b4c55-74de-49f1-9a8d-72916e2d6793/resourcegroups/CapstoneTangerineApp/providers/microsoft.insights/components/CapstoneTangerineApp</ApplicationInsightsResourceId>
+    <ApplicationInsightsAnnotationResourceId>/subscriptions/849b4c55-74de-49f1-9a8d-72916e2d6793/resourcegroups/CapstoneTangerineApp/providers/microsoft.insights/components/CapstoneTangerineApp</ApplicationInsightsAnnotationResourceId>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -216,20 +218,26 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\IdentityConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\AdminController.cs" />
     <Compile Include="Controllers\ContentController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="Controllers\MalwareController.cs" />
     <Compile Include="Controllers\PasswordSafetyController.cs" />
     <Compile Include="Controllers\PhishingController.cs" />
+    <Compile Include="Controllers\QuizOptionsController.cs" />
+    <Compile Include="Controllers\RegisterClientController.cs" />
     <Compile Include="Controllers\SocialEngineeringController.cs" />
     <Compile Include="Controllers\ThreatsOverviewController.cs" />
+    <Compile Include="ErrorHandler\AiHandleErrorAttribute.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\HomeModel.cs" />
     <Compile Include="Models\IdentityModel.cs" />
     <Compile Include="Models\LoginModel.cs" />
+    <Compile Include="Models\QuizOptionsModel.cs" />
+    <Compile Include="Models\RegisterClientModel.cs" />
     <Compile Include="Models\ThreatsOverviewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Settings.Designer.cs">
@@ -261,6 +269,7 @@
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
     <Content Include="Images\2FA.PNG" />
+    <Content Include="Images\Edit.png" />
     <Content Include="Images\google.png" />
     <Content Include="Images\GrowthOfMalware.PNG" />
     <Content Include="Images\Malware.PNG" />
@@ -278,6 +287,7 @@
     <Content Include="Images\PS4.PNG" />
     <Content Include="Images\PS5.PNG" />
     <Content Include="Images\SEng.PNG" />
+    <Content Include="Images\Server.png" />
     <Content Include="Images\SocialEng.PNG" />
     <Content Include="Images\SocialEngTips.PNG" />
     <Content Include="Images\SQ1.PNG" />
@@ -307,6 +317,7 @@
     <Content Include="Content\sweetalert\sweet-alert-animations.less" />
     <Content Include="Content\bootstrap\variables.less" />
     <Content Include="Content\bootstrap\mixins.less" />
+    <Content Include="Connected Services\Application Insights\ConnectedService.json" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -359,6 +370,10 @@
     <Content Include="Views\Phishing\PhishingView.cshtml" />
     <Content Include="Views\SocialEngineering\SocialEngineeringView.cshtml" />
     <Content Include="Views\PasswordSafety\PasswordSafetyView.cshtml" />
+    <Content Include="Views\Admin\AdminView.cshtml" />
+    <Content Include="Views\Shared\_AdminLayout.cshtml" />
+    <Content Include="Views\RegisterClient\RegisterClientView.cshtml" />
+    <Content Include="Views\QuizOptions\QuizOptionsView.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -375,6 +390,9 @@
     <None Include="packages.config" />
     <Content Include="Scripts\jquery-3.3.1.slim.min.map" />
     <Content Include="Scripts\jquery-3.3.1.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

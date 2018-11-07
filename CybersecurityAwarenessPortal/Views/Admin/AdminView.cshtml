@@ -1,5 +1,6 @@
 ﻿@{
     ViewBag.Title = "Home";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
 }
 <head>
     <meta charset="utf-8">
@@ -51,7 +52,7 @@
         }
     </style>
 </head>
-<div class="jumbotron" style="background-image:url('../../Banking.png');">
+@*<div class="jumbotron" style="background-image:url('../../Banking.png');">
     <a href="https://www.tangerine.ca/en/index.html"> <img src="~/Tangerine.png" style="width:200px;" /> </a>
     <p class="lead" style="color: white; font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif">
         At Tangerine, we’re committed to helping Canadians live better lives.
@@ -59,35 +60,38 @@
         We can only do this by making some important promises, and more importantly, by keeping them!
     </p>
     <p style="font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif"><a href="https://www.tangerine.ca/en/index.html" class="btn btn-info btn-lg">Learn more &raquo;</a></p>
-</div>
+</div>*@
 
 
 <div id="portfolio" class="container-fluid text-center bg-grey">
-    
+
     <div class="row text-center slideanim">
         <div class="col-sm-4">
             <div class="thumbnail">
-                <img src="~/Cybersecurity.jpg" @*alt="Paris"*@ style="width:400px; height:250px;" width="400" height="300">
-                <p>
-                    <strong>
-                        Learn About Cybersecurity Measures And Take Our Interactive Quiz.
-                    </strong>
-                </p>
-                <a class="btn btn-info" href="@Url.Action("ContentView","Content")" @*href="https://go.microsoft.com/fwlink/?LinkId=301865"*@>Learn Modules &raquo;</a>
+                <img src="~/Images/Server.png" alt="New York" style="width:300px;height:250px;">
+                <p><strong>Check Server Status On Azure </strong></p>
+                <a class="btn btn-info" href="https://portal.azure.com/" target="_blank">Check &raquo;</a>
             </div>
-        </div>
-        <div class="col-sm-1">
-           
         </div>
 
         <div class="col-sm-4">
             <div class="thumbnail">
-                <img src="~/Progress.png" alt="New York" style="width:400px;height:250px;">
-                <p><strong>See Your Progress, See The Modules You Have Completed, Your Results etc.</strong></p>
-                <a class="btn btn-info" @*href="@Url.Action("ContentView","Content")"*@>Progress &raquo;</a>
+                <img src="~/Admin.png" alt="New York" style="width:300px;height:250px;">
+                <p><strong>Register A New Employee </strong></p>
+                <a class="btn btn-info" href="@Url.Action("RegisterClientView","RegisterClient")">Register &raquo;</a>
+            </div>
+        </div>
+
+        <div class="col-sm-4">
+            <div class="thumbnail">
+                <img src="~/Images/Edit.png"  style="width:300px;height:250px;">
+                <p><strong>Edit Quiz Options </strong></p>
+                <a class="btn btn-info" href="@Url.Action("QuizOptionsView","QuizOptions")">Edit &raquo;</a>
             </div>
         </div>
 
     </div>
+
+
 </div>
 
