@@ -1,0 +1,138 @@
+﻿#hero {
+    background: #000000;
+    width: 20px;
+    height: 20px;
+    position: absolute;
+}
+
+#background {
+    background: #000000;
+    width: 1105px;
+    height: 550px;
+    position: absolute;
+    left: 5px;
+    top: 0px;
+}
+
+#laser {
+    background: #ffffff;
+    width: 4px;
+    height: 5px;
+    position: absolute;
+}
+
+#OptionA, #OptionB, #OptionC, #OptionD, #buttonA, #buttonB, #buttonC, #buttonD {
+    border-style: solid;
+    border-width: 2px;
+    -moz-border-radius: 60px;
+    -webkit-border-radius: 60px;
+    border-radius: 60px;
+    display: block;
+    vertical-align: middle;
+    text-align: center;
+    width: 400px;
+    height: 120px;
+    position: absolute;
+}
+
+#OptionA, #buttonA {
+    background: #ff00ff;
+}
+
+#OptionB, #buttonB {
+    background: #0000ff;
+}
+
+#OptionC, #buttonC {
+    background: #32cd32;
+}
+
+#OptionD, #buttonD {
+    background: #ff0000;
+}
+
+#buttonA, #buttonB, #buttonC, #buttonD {
+    text-align: center;
+    padding-top: 0px;
+    margin-top: 0px;
+}
+
+#QuestionArea {
+    background: #000000;
+    border-style: dashed;
+    border-width: 2px;
+    border-color: white;
+    width: 500px;
+    height: 70px;
+    position: absolute;
+    left: 30px;
+    top: 50px;
+    color: white;
+}
+
+#labelA, #labelB, #labelC, #labelD {
+    background: #ffffff;
+    width: 30px;
+    padding: 0px;
+    margin: 0px;
+    text-align: center;
+}
+
+#RecordField {
+    background: #b200ff;
+    width: 300px;
+    height: 550px;
+    position: absolute;
+    left: 1115px;
+    top: 0px;
+}
+
+#ModTitle {
+    background: #ff00ff;
+    width: 90%;
+    height: 50px;
+    margin: 5%;
+    text-align: center;
+}
+
+#CorrectTitle {
+    background: #ffd800;
+    width: 90%;
+    height: 50px;
+    margin: 5%;
+}
+
+#IncorrectTitle {
+    background: #b6ff00;
+    width: 90%;
+    height: 50px;
+    margin: 5%;
+}
+
+#AttemptTitle {
+    background: #ff6a00;
+    width: 90%;
+    height: 50px;
+    margin: 5%;
+}
+
+#QuestionCountTitle {
+    background: #ff0000;
+    width: 90%;
+    height: 50px;
+    margin: 5%;
+}
+
+#LegendTitle {
+    background: #32cd32;
+    width: 90%;
+    height: 200px;
+    margin: 5%;
+}
+
+#OptionATarget, #OptionBTarget, #OptionCTarget, #OptionDTarget {
+    background: #000000;
+    width: 20px;
+    height: 20px;
+    position: absolute;
+}

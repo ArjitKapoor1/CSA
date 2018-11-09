@@ -124,6 +124,7 @@
       <Private>True</Private>
       <Private>True</Private>
     </Reference>
+    <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -220,6 +221,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\AdminController.cs" />
     <Compile Include="Controllers\ContentController.cs" />
+    <Compile Include="Controllers\GameController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="Controllers\MalwareController.cs" />
@@ -229,6 +231,7 @@
     <Compile Include="Controllers\RegisterClientController.cs" />
     <Compile Include="Controllers\SocialEngineeringController.cs" />
     <Compile Include="Controllers\ThreatsOverviewController.cs" />
+    <Compile Include="Controllers\UserProgressController.cs" />
     <Compile Include="ErrorHandler\AiHandleErrorAttribute.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -236,9 +239,11 @@
     <Compile Include="Models\HomeModel.cs" />
     <Compile Include="Models\IdentityModel.cs" />
     <Compile Include="Models\LoginModel.cs" />
+    <Compile Include="Models\QuestionRecords.cs" />
     <Compile Include="Models\QuizOptionsModel.cs" />
     <Compile Include="Models\RegisterClientModel.cs" />
     <Compile Include="Models\ThreatsOverviewModel.cs" />
+    <Compile Include="Models\UserProgressModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Settings.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -255,9 +260,37 @@
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\font-awesome.min.css" />
+    <Content Include="Content\mycss\gameStyle.css" />
     <Content Include="Content\hamburgers.min.css" />
     <Content Include="Content\icon-font.min.css" />
     <Content Include="Content\loginanimate.css" />
+    <Content Include="Content\myimg\background.png" />
+    <Content Include="Content\myimg\char1.png" />
+    <Content Include="Content\myimg\char2.png" />
+    <Content Include="Content\myimg\char3.png" />
+    <Content Include="Content\myimg\char4.png" />
+    <Content Include="Content\myimg\player.png" />
+    <Content Include="Content\myimg\pokeball.png" />
+    <Content Include="Content\myimg\pokemon1.png" />
+    <Content Include="Content\myimg\pokemon2.png" />
+    <Content Include="Content\myimg\pokemon3.png" />
+    <Content Include="Content\myimg\pokemon4.png" />
+    <Content Include="Content\myimg\puffy.png" />
+    <Content Include="Content\myimg\spikes.png" />
+    <Content Include="Content\myjs\bullets.js" />
+    <Content Include="Content\myjs\game.js" />
+    <Content Include="Content\myjs\gameButton.js" />
+    <Content Include="Content\myjs\keyLogger.js" />
+    <Content Include="Content\myjs\main.js" />
+    <Content Include="Content\myjs\player.js" />
+    <Content Include="Content\myjs\questionGenerator.js" />
+    <Content Include="Content\myjs\targets.js" />
+    <Content Include="Content\myjs\utils.js" />
+    <Content Include="Content\mysound\backgroundMusic.mp3" />
+    <Content Include="Content\mysound\Hover.wav" />
+    <Content Include="Content\mysound\LaserBlasts.wav" />
+    <Content Include="Content\mysound\music.mp3" />
+    <Content Include="Content\mysound\shotSoundTrack.mp3" />
     <Content Include="Content\sweetalert\bootstrap-sweetalert.png" />
     <Content Include="Content\sweetalert\docs.css" />
     <Content Include="Content\sweetalert\sweet-alert.css" />
@@ -374,6 +407,8 @@
     <Content Include="Views\Shared\_AdminLayout.cshtml" />
     <Content Include="Views\RegisterClient\RegisterClientView.cshtml" />
     <Content Include="Views\QuizOptions\QuizOptionsView.cshtml" />
+    <Content Include="Views\UserProgress\UserProgressView.cshtml" />
+    <Content Include="Views\Game\GamePage2.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

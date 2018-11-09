@@ -121,7 +121,11 @@
             </div>
         </div>
         <div class="row" style="position:relative; top:30px;">
-            <a class="btn btn-success">Take The Quiz &raquo;</a>
+            @{ 
+                CybersecurityAwarenessPortal.Models.UserProgressModel upm = new CybersecurityAwarenessPortal.Models.UserProgressModel();
+                upm.GetMaxAttemptsM1();
+            }
+            <a class="btn btn-success" href="@Url.Action("GamePage2","Game")">Take The Quiz &raquo;</a>
             <a class="btn btn-danger" href="@Url.Action("Index","Home")">Home &raquo;</a>
         </div>
     </div>

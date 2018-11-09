@@ -8,11 +8,7 @@ using Dropbox.Api;
 namespace CybersecurityAwarenessPortal.Models
 {
     public class ThreatsOverviewModel
-    {
-        public List<SelectListItem> ImageName { get; set; }
-
-        public string img { get; set; }
-
-        public DropboxClient dbxuser { get; set; }
+    { 
+        public int NumOfAttempts { get; set; }
     }
 }

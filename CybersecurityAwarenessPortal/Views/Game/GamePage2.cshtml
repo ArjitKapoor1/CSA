@@ -1,0 +1,580 @@
+﻿@model CybersecurityAwarenessPortal.Models.QuestionRecords
+<!DOCTYPE html>
+@{ 
+    Layout = null;
+}
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>GamePage2</title>
+    <title>Game Shooting - Rotate</title>
+
+    <style>
+        body {
+            border: solid;
+            width: 1280px;
+            height: 720px;
+        }
+
+        #OptionA, #OptionB, #OptionC, #OptionD {
+            background: #ffff00;
+            border-radius: 60px;
+            width: 400px;
+            height: 96px;
+            display: none;
+            position: absolute;
+        }
+
+        #OptionA {
+            margin-top: 129px;
+            margin-left: 30px;
+        }
+
+        #OptionB {
+            margin-top: 601px;
+            margin-left: 30px;
+        }
+
+        #OptionC {
+            margin-top: 129px;
+            margin-left: 850px;
+        }
+
+        #OptionD {
+            margin-top: 601px;
+            margin-left: 850px;
+        }
+
+        #buttonA, #buttonB, #buttonC, #buttonD {
+            background: #ffff00;
+            border-radius: 40px;
+            width: 380px;
+            height: 74px;
+            margin: 10px;
+            text-align: center;
+            padding: 0px;
+            font-size: 20px;
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        }
+
+        #QuestionArea {
+            background: transparent;
+            border-style: none;
+            border-width: 2px;
+            border-color: black;
+            border-radius: 30px;
+            display: none;
+            text-align: center;
+            vertical-align: central;
+            width: 500px;
+            height: 70px;
+            position: absolute;
+            margin-top: 242px;
+            margin-left: 385px;
+            color: black;
+            font-size: 25px;
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        }
+
+        p {
+            background: #ffffff;
+            width: 30px;
+            padding: 0px;
+            margin: 0px;
+            text-align: center;
+        }
+
+        #img1, #img2, #img3, #img4 {
+            background: transparent;
+            width: 100px;
+            height: 100px;
+            position: absolute;
+        }
+
+        #img1 {
+            top: 38px;
+            left: 190px;
+        }
+
+        #img2 {
+            top: 508px;
+            left: 190px;
+        }
+
+        #img3 {
+            top: 38px;
+            left: 1010px;
+        }
+
+        #img4 {
+            top: 508px;
+            left: 1010px;
+        }
+
+        #canvas {
+        }
+
+        #gamepage {
+            background: url("/Content/myimages/background.png");
+            background-size: 1280px 720px;
+            width: 1280px;
+            height: 720px;
+            position: absolute;
+            display: block;
+        }
+
+        #optionALabel, #optionBLabel, #optionCLabel, #optionDLabel, #answerLabel {
+            display: block;
+        }
+
+        #questionnaires, #targetSprite {
+            display: none;
+        }
+
+        #endgamepage {
+            background: url("/Content/myimages/background.png");
+            background-size: 500px 500px;
+            border-radius: 60px;
+            width: 500px;
+            height: 500px;
+            position: absolute;
+            left: 390px;
+            top: 110px;
+            display: none;
+        }
+
+        #enquery {
+            background: url("/Content/myimages/background.png");
+            background-size: 500px 500px;
+            border-radius: 60px;
+            width: 500px;
+            height: 500px;
+            position: absolute;
+            left: 390px;
+            top: 110px;
+            display: none;
+        }
+
+        #image1, #image2, #image3, #image4 {
+            width: 100px;
+            height: 100px;
+            background: url('https://cdn.codeandweb.com/blog/2016/05/10/how-to-create-a-sprite-sheet/spritestrip.png') 0px 0px;
+            background-size: 600px 100px;
+            position: absolute;
+        }
+
+        #image1 {
+            top: 38px;
+            left: 190px;
+        }
+
+        #image2 {
+            top: 508px;
+            left: 190px;
+        }
+
+        #image3 {
+            top: 38px;
+            left: 1010px;
+        }
+
+        #image4 {
+            top: 508px;
+            left: 1010px;
+        }
+    </style>
+
+</head>
+<body>
+    <!--
+    <img id ="img1" src="/Content/myimages/gif1.gif" />
+    <img id ="img2" src="/Content/myimages/gif2.gif" />
+    <img id ="img3" src="/Content/myimages/gif3.gif" />
+    <img id ="img4" src="/Content/myimages/gif4.gif" />
+    -->
+    <div id="gamepage">
+        <center>
+            <div>
+                <h1 style="font-size:50px;">Welcome, @Session["username"] </h1>
+
+                <br />
+                <label style="font-size:30px;"><b>How To Play:</b></label><br /><br />
+                <p style="width:500px; background: transparent;font-size:25px;">
+                    There are two Options of playing the game <br /><br />
+                    <b>First Option: </b><br />Use Mouse to click on the answer of your choosing.
+                    <br />
+                    <br />
+                    <b>Second Option: </b><br />Use the left/Right arrow to the direction you desire and pressing the Space Bar to fire/shoot the answer of your choosing.
+
+                    <br />
+                    <br />
+                </p>
+                <h2>
+                    Please, Click "Start Game" To Begin Your
+                    <br> Cyber Security Training Game!!
+                </h2>
+                <input type="button" onclick="startGame()" value="Start Game" id="startButton" style="font-size:40px;" />
+                <!--<input type="button" onclick="" value="Quit Game" id="stopButton" />-->
+            </div>
+        </center>
+    </div>
+    <div id="enquery">
+        <center>
+            <div>
+                <br />
+                <label style="font-size:30px; ">Result:</label><br />
+                <p id="enqueryAnswer"></p>
+                <label id="stats" style="font-size:25px;">Correct/Incorrect</label><br /><br />
+                <label style="font-size: 23px;"><b>Question:</b></label>
+                <table>
+                    <tr>
+                        <th id="enqueryQuestion" style="font-style:italic;font-size:20px;">
+                            Question Goes Here
+                        </th>
+                    </tr>
+
+                    <tr>
+
+                        <td id="EnqueryOption" style="border:solid; width:420px;height:150px;text-align:center;font-size:30px;">U</td>
+
+                    </tr>
+                </table><br />
+                <label style="font-size:30px;">Current:</label>
+                <div style="font-size:25px;font-style:oblique;">
+                    <label id="QuestionCountLabel" name="optionDLabelHidden">0</label>
+                    <label>/10</label>
+                </div>
+                <label></label><br /><b>
+                    <input type="button" value="Confirm" onclick="EnableDisable()" style="font-size: 30px;" />
+            </div>
+        </center>
+        <script>
+            function change() {
+                var table1 = document.getElementById("EnqueryOption");
+
+                document.getElementById("EnqueryOption").innerHTML = "HA:LKSJF:LAJSF:LKJSAD";
+            }
+            function EnableDisable() {
+                var x = document.getElementById("gamepage");
+                //alert("test");
+                var question = document.getElementById("QuestionArea");
+                var optionA = document.getElementById("OptionA");
+                var optionB = document.getElementById("OptionB");
+                var optionC = document.getElementById("OptionC");
+                var optionD = document.getElementById("OptionD");
+                //alert("1");
+                var targetSprite = document.getElementById("targetSprite");
+
+                var enq = document.getElementById("enquery");
+
+                if (enq.style.display == "none") {
+                    //alert("2");
+                    question.style.display = "none";
+                    optionA.style.display = "none";
+                    optionB.style.display = "none";
+                    optionC.style.display = "none";
+                    optionD.style.display = "none";
+                    targetSprite.style.display = "none";
+                    enq.style.display = "block";
+                } else {
+                    //alert("3");
+                    question.style.display = "block";
+                    optionA.style.display = "block";
+                    optionB.style.display = "block";
+                    optionC.style.display = "block";
+                    optionD.style.display = "block";
+                    targetSprite.style.display = "block";
+                    enq.style.display = "none";
+                }
+                questGen.Question();
+
+            }
+
+        </script>
+    </div>
+    <div id="endgamepage">
+        <center>
+            <div>
+                @using (Html.BeginForm("GameStat", "Game", FormMethod.Post))
+                {
+                    <center>
+                        <br />
+                        <label style="font-style:oblique;font-size:25px;"><b>Employee:</b></label><br />
+
+                        <label style="font-style:oblique;font-size:25px;"><b>@Model.empEmail</b></label>
+                        <br />
+                        <br />
+                        <label style="font-style:oblique;font-size:25px;">Employee's Number:</label><br />
+                        <label style="font-style:oblique;font-size:25px;">@Model.empNum</label>
+                        <br />
+                        <br />
+
+                        <label style="font-size:30px;"><b>Completed: </b></label> <label id="passfail" style="font-size:30px;">Pass or Fail</label>
+                        <br />
+                        <br />
+                        <label style="font-size:25px;">Attmpt(s): </label>
+                        <input type="text" id="currentAttemptLabel" name="userCorrect" value="0" style="background:#c7c7c7;text-align:center;width:50px;font-size:20px;" disabled />
+                        <br />
+                        <br />
+                        <label style="font-size:25px;">Mark(%): </label>
+
+                        <input type="text" id="userCorrectLabel" name="userCorrect" value="%" style="background:#c7c7c7;text-align:center;width:50px; font-size:20px;" disabled />
+                        <br /> <br />
+                        <label style="font-size:30px;">Please,<br /> Click On Confirm To Proceed!!</label>
+
+                        <br /><br />
+                        <input type="submit" value="Confirm" onclick="enableInputs()" style="font-size:30px;" />
+                        <!--
+                        <br /><br />
+
+                        <input type="button" value="Back" onclick="questionGenerator(1)" /><br />
+                        <input type="button" value="Forward" onclick="questionGenerator(2)" /><br />
+                        <input type="submit" value="TEST" onclick="questionGenerator()" />
+                            -->
+                    </center>
+                    <script type="text/javascript">
+                        function enableInputs() {
+                            var s = document.getElementById("userCorrectLabel");
+                            var a = document.getElementById("currentAttemptLabel");
+                            //s.value = "DISABLED";
+                            s.disabled = false;
+                            //   a.disabled = false;
+                        }
+                    </script>
+                }
+            </div>
+        </center>
+    </div>
+    <div id="targetSprite">
+        <div id="targetSprite1">
+            <p id="image1">  </p>
+            <p id="image2">  </p>
+        </div>
+        <div id="targetSprite2">
+            <p id="image3">  </p>
+            <p id="image4">  </p>
+        </div>
+    </div>
+    <div id="QuestionArea">
+
+        <label id="questionLabel">@*@Model.questionnaire[3, 1]*@ Question </label>
+
+
+    </div>
+    <div id="OptionA">
+        <h2 id="buttonA" onclick="questGen.shootResult(1)">asdfas</h2>
+    </div>
+    <div id="OptionB">
+        <h2 id="buttonB" onclick="questGen.shootResult(2)"></h2>
+    </div>
+
+    <div id="OptionC">
+        <h2 id="buttonC" onclick="questGen.shootResult(3)"></h2>
+    </div>
+
+    <div id="OptionD">
+        <h2 id="buttonD" onclick="questGen.shootResult(4)"></h2>
+    </div>
+
+    <div id="questionnaires">
+        <label id="questionCounterLabel" name="optionALabelHidden">@Model.questionCounter</label>
+        <label id="answerLabel" name="answerLabelHidden"></label>
+        <label id="CorrectLabel" name="optionBLabelHidden">0</label>
+        <label id="IncorrectLabel" name="optionCLabelHidden">0</label>
+        <br />
+        <label id="attemptLabel" name="optionDLabelHidden">@Model.attemptCount</label>
+
+        <audio id="backgroundMusic">
+            <source src="/Content/mysound/backgroundMusic.mp3" type="audio/ogg">
+            <source src="/Content/mysound/backgroundMusic.mp3" type="audio/mpeg">
+        </audio>
+        <audio id="shotSoundTrack">
+            <source src="/Content/mysound/shotSoundTrack.mp3" type="audio/ogg">
+            <source src="/Content/mysound/shotSoundTrack.mp3" type="audio/mpeg">
+        </audio>
+
+        @if (Model != null)
+        {
+            //String[] ques = new String[20];
+            //int count = 0;
+            if (Model.questionInfo.Count > 0)
+            {
+                <select id="questionSelect">
+                    @foreach (var item in Model.questionInfo)
+                    {
+                        <option value="@Html.DisplayFor(m => item.question)"> @Html.DisplayFor(m => item.question) </option>
+                    }
+                </select>
+                <select id="optionASelect">
+                    @foreach (var item in Model.questionInfo)
+                    {
+                        <option value="@Html.DisplayFor(m => item.optionA)"> @Html.DisplayFor(m => item.optionA) </option>
+                    }
+                </select>
+                <select id="optionBSelect">
+                    @foreach (var item in Model.questionInfo)
+                    {
+                        <option value="@Html.DisplayFor(m => item.optionB)"> @Html.DisplayFor(m => item.optionB) </option>
+                    }
+                </select>
+                <select id="optionCSelect">
+                    @foreach (var item in Model.questionInfo)
+                    {
+                        <option value="@Html.DisplayFor(m => item.optionC)"> @Html.DisplayFor(m => item.optionC) </option>
+                    }
+                </select>
+                <select id="optionDSelect">
+                    @foreach (var item in Model.questionInfo)
+                    {
+                        <option value="@Html.DisplayFor(m => item.optionD)"> @Html.DisplayFor(m => item.optionD) </option>
+                    }
+                </select>
+                <select id="answerSelect">
+                    @foreach (var item in Model.questionInfo)
+                    {
+                        <option value="@Html.DisplayFor(m => item.answer)"> @Html.DisplayFor(m => item.answer) </option>
+                    }
+                </select>
+            }
+        }
+        <!--
+
+        <select id="questionSelect">
+            <option value="Q01">Q01</option>
+            <option value="Q02">Q02</option>
+            <option value="Q03">Q03</option>
+            <option value="Q04">Q04</option>
+            <option value="Q05">Q05</option>
+            <option value="Q06">Q06</option>
+            <option value="Q07">Q07</option>
+            <option value="Q08">Q08</option>
+            <option value="Q09">Q09</option>
+            <option value="Q10">Q10</option>
+        </select>
+        <select id="optionASelect">
+            <option value="OA01">OA01</option>
+            <option value="OA02">OA02</option>
+            <option value="OA03">OA03</option>
+            <option value="OA04">OA04</option>
+            <option value="OA05">OA05</option>
+            <option value="OA06">OA06</option>
+            <option value="OA07">OA07</option>
+            <option value="OA08">OA08</option>
+            <option value="OA09">OA09</option>
+            <option value="OA10">OA10</option>
+        </select>
+        <select id="optionBSelect">
+            <option value="OB01">OB01</option>
+            <option value="OB02">OB02</option>
+            <option value="OB03">OB03</option>
+            <option value="OB04">OB04</option>
+            <option value="OB05">OB05</option>
+            <option value="OB06">OB06</option>
+            <option value="OB07">OB07</option>
+            <option value="OB08">OB08</option>
+            <option value="OB09">OB09</option>
+            <option value="OB10">OB10</option>
+        </select>
+        <select id="optionCSelect">
+            <option value="OC01">OC01</option>
+            <option value="OC02">OC02</option>
+            <option value="OC03">OC03</option>
+            <option value="OC04">OC04</option>
+            <option value="OC05">OC05</option>
+            <option value="OC06">OC06</option>
+            <option value="OC07">OC07</option>
+            <option value="OC08">OC08</option>
+            <option value="OC09">OC09</option>
+            <option value="OC10">OC10</option>
+        </select>
+        <select id="optionDSelect">
+            <option value="OD01">OD01</option>
+            <option value="OD02">OD02</option>
+            <option value="OD03">OD03</option>
+            <option value="OD04">OD04</option>
+            <option value="OD05">OD05</option>
+            <option value="OD06">OD06</option>
+            <option value="OD07">OD07</option>
+            <option value="OD08">OD08</option>
+            <option value="OD09">OD09</option>
+            <option value="OD10">OD10</option>
+        </select>
+        <select id="answerSelect">
+            <option value="a">a</option>
+            <option value="b">b</option>
+            <option value="c">c</option>
+            <option value="d">d</option>
+            <option value="d">d</option>
+            <option value="c">c</option>
+            <option value="b">b</option>
+            <option value="a">a</option>
+            <option value="a">a</option>
+            <option value="b">b</option>
+        </select>
+            -->
+    </div>
+
+    <!--
+    <input type="button" value="stop" onclick="stopGame();" />
+    <input type="button" value="reset" onclick="resetInterval();" />
+        -->
+
+
+
+    <canvas id="canvas" width="1280" height="720">failed</canvas>
+    <script>
+
+                                                        /*
+                                                        var exists = [],
+                                                            randomNumber,
+                                                            max = 10,
+                                                            counter = 0,
+                                                            randNum = [];
+
+                                                        function randomNumberGenerator() {
+                                                            for (var l = 0; l < max; l++) {
+                                                                do {
+                                                                    randomNumber = Math.floor(Math.random() * max);
+                                                                } while (exists[randomNumber]);
+                                                                exists[randomNumber] = true;
+                                                                randNum[l] = randomNumber;
+                                                                //alert(randomNumber)
+
+                                                            }
+                                                        }
+
+                                                        function questionGen() {
+
+                                                            alert("dfug");
+
+                                                            randomNumber = Math.floor(Math.random() * 10);
+                                                            var optASel = document.getElementById("optionASelect");
+                                                            var questSel = document.getElementById("questionSelect");
+                                                            var optASel = document.getElementById("optionASelect");
+                                                            var optBSel = document.getElementById("optionBSelect");
+                                                            var optCSel = document.getElementById("optionCSelect");
+                                                            var optDSel = document.getElementById("optionDSelect");
+                                                            var ansSel = document.getElementById("answerSelect");
+
+
+                                                            document.getElementById("questionLabel").innerHTML = questSel.options[randomNumber].innerHTML;
+                                                            document.getElementById("buttonA").innerHTML = optASel.options[randomNumber].innerHTML;
+                                                            document.getElementById("buttonB").innerHTML = optBSel.options[randomNumber].innerHTML;
+                                                            document.getElementById("buttonC").innerHTML = optCSel.options[randomNumber].innerHTML;
+                                                            document.getElementById("buttonD").innerHTML = optDSel.options[randomNumber].innerHTML;
+
+                                                        }*/
+
+    </script>
+    <script src="@Url.Content("~/Content/myjs")/keyLogger.js"></script>
+    <script src="@Url.Content("~/Content/myjs")/player.js"></script>
+    <script src="@Url.Content("~/Content/myjs")/bullets.js"></script>
+    <script src="@Url.Content("~/Content/myjs")/targets.js"></script>
+    <script src="@Url.Content("~/Content/myjs")/utils.js"></script>
+    <script src="@Url.Content("~/Content/myjs")/main.js"></script>
+    <script src="@Url.Content("~/Content/myjs")/questionGenerator.js"></script>
+
+
+
+</body>
+</html>
