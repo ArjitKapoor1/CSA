@@ -65,6 +65,10 @@
         .slideanim {
             visibility: visible;
         }
+
+        p, li {
+            text-align: left;
+        }
     </style>
 </head>
 <body>
@@ -100,32 +104,38 @@
             <div class="col-sm-4">
                 <div class="thumbnail">
                     <img src="~/Images/Malware.PNG" @*alt="Paris"*@ width="400" height="300">
-                    <p><strong> Malware</strong></p>
-                    <a class="btn btn-info" href="@Url.Action("MalwareView","Malware")">Learn Malware &raquo;</a>
+                    <h5><strong> Malware</strong></h5>
+                    <a class="btn btn-info" href="@Url.Action("MalwareView", "Malware")">Learn Malware &raquo;</a>
                 </div>
             </div>
             <div class="col-sm-4">
                 <div class="thumbnail">
                     <img src="~/Images/Phishing.PNG" alt="New York" width="400" height="300">
-                    <p><strong>Phishing</strong></p>
-                    <a class="btn btn-info" href="@Url.Action("PhishingView","Phishing")">Learn Phishing &raquo;</a>
+                    <h5><strong>Phishing</strong></h5>
+                    <a class="btn btn-info" href="@Url.Action("PhishingView", "Phishing")">Learn Phishing &raquo;</a>
                 </div>
             </div>
 
             <div class="col-sm-4">
                 <div class="thumbnail">
                     <img src="~/Images/SEng.PNG" alt="New York" style="height:183px;" width="400" height="320" id="internet">
-                    <p><strong>Social Engineering</strong></p>
-                    <a class="btn btn-info" href="@Url.Action("SocialEngineeringView","SocialEngineering")">Learn Social Engineering &raquo;</a>
+                    <h5><strong>Social Engineering</strong></h5>
+                    <a class="btn btn-info" href="@Url.Action("SocialEngineeringView", "SocialEngineering")">Learn Social Engineering &raquo;</a>
                 </div>
             </div>
         </div>
         <div class="row" style="position:relative; top:30px;">
-            @{ 
+            @{
                 CybersecurityAwarenessPortal.Models.UserProgressModel upm = new CybersecurityAwarenessPortal.Models.UserProgressModel();
-                upm.GetMaxAttemptsM1();
+                upm.EmployeeEmail = Session["username"].ToString();
+                upm.EmployeeID = upm.GetEmployeeID();
+                int attempt = upm.GetMaxAttemptsM1();
+                upm.availAttempts = upm.GetAvailAttempts();
+                if (attempt < upm.availAttempts)
+                {
+                    <a class="btn btn-success" href="@Url.Action("GamePage2", "Game")">Take The Quiz &raquo;</a>
+                }
             }
-            <a class="btn btn-success" href="@Url.Action("GamePage2","Game")">Take The Quiz &raquo;</a>
             <a class="btn btn-danger" href="@Url.Action("Index","Home")">Home &raquo;</a>
         </div>
     </div>

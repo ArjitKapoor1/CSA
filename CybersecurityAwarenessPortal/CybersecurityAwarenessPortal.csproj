@@ -303,7 +303,6 @@
     <Content Include="Content\Site.css" />
     <Content Include="Images\2FA.PNG" />
     <Content Include="Images\Edit.png" />
-    <Content Include="Images\google.png" />
     <Content Include="Images\GrowthOfMalware.PNG" />
     <Content Include="Images\Malware.PNG" />
     <Content Include="Images\MalwareTips.PNG" />
@@ -366,7 +365,6 @@
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="Scripts\loginbootstrap.min.js" />
-    <Content Include="Scripts\loginjquery-3.2.1.min.js" />
     <Content Include="Scripts\main.js" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
     <Content Include="Scripts\popper.js" />

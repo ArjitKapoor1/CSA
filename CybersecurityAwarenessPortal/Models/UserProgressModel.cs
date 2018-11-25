@@ -17,6 +17,8 @@ namespace CybersecurityAwarenessPortal.Models
         public int EmployeeID { get; set; }
         public string EmployeeEmail { get; set; }
         public double percentage { get; set; }
+        public int mod { get; set; }
+        public int availAttempts { get; set; }
 
         public int GetEmployeeID()
         {
@@ -104,6 +106,93 @@ namespace CybersecurityAwarenessPortal.Models
             using (SqlConnection con = new SqlConnection(constr))
             {
                 string query = "SELECT MAX(attempt_num) FROM userProgress WHERE employee_id =@id AND module_num=2";
+                using (SqlCommand cmd = new SqlCommand(query))
+                {
+                    cmd.Connection = con;
+                    con.Open();
+                    cmd.Parameters.AddWithValue("@id", EmployeeID);
+                    using (SqlDataReader sdr = cmd.ExecuteReader())
+                    {
+                        while (sdr.Read())
+                        {
+                            if (sdr.IsDBNull((0)))
+                            {
+                                id = 0;
+                            }
+                            else id = sdr.GetInt32(0);
+                        }
+                    }
+                    con.Close();
+                }
+            }
+            return id;
+        }
+
+        public int GetMaxAttemptsM3()
+        {
+            int id = new int();
+            string constr = ConfigurationManager.ConnectionStrings["DBConnection"].ConnectionString;
+            using (SqlConnection con = new SqlConnection(constr))
+            {
+                string query = "SELECT MAX(attempt_num) FROM userProgress WHERE employee_id =@id AND module_num=3";
+                using (SqlCommand cmd = new SqlCommand(query))
+                {
+                    cmd.Connection = con;
+                    con.Open();
+                    cmd.Parameters.AddWithValue("@id", EmployeeID);
+                    using (SqlDataReader sdr = cmd.ExecuteReader())
+                    {
+                        while (sdr.Read())
+                        {
+                            if (sdr.IsDBNull((0)))
+                            {
+                                id = 0;
+                            }
+                            else id = sdr.GetInt32(0);
+                        }
+                    }
+                    con.Close();
+                }
+            }
+            return id;
+        }
+
+        public int GetMaxAttemptsM4()
+        {
+            int id = new int();
+            string constr = ConfigurationManager.ConnectionStrings["DBConnection"].ConnectionString;
+            using (SqlConnection con = new SqlConnection(constr))
+            {
+                string query = "SELECT MAX(attempt_num) FROM userProgress WHERE employee_id =@id AND module_num=4";
+                using (SqlCommand cmd = new SqlCommand(query))
+                {
+                    cmd.Connection = con;
+                    con.Open();
+                    cmd.Parameters.AddWithValue("@id", EmployeeID);
+                    using (SqlDataReader sdr = cmd.ExecuteReader())
+                    {
+                        while (sdr.Read())
+                        {
+                            if (sdr.IsDBNull((0)))
+                            {
+                                id = 0;
+                            }
+                            else id = sdr.GetInt32(0);
+                        }
+                    }
+                    con.Close();
+                }
+            }
+            return id;
+        }
+
+        public int GetAvailAttempts()
+        {
+            int id = new int();
+            string constr = ConfigurationManager.ConnectionStrings["DBConnection"].ConnectionString;
+            using (SqlConnection con = new SqlConnection(constr))
+            {
+                string query = "SELECT numOfAttempts FROM quizOptions";
                 using (SqlCommand cmd = new SqlCommand(query))
                 {
                     cmd.Connection = con;

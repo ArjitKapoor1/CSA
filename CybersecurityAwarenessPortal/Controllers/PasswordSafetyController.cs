@@ -11,6 +11,7 @@ namespace CybersecurityAwarenessPortal.Controllers
         // GET: PasswordSafety
         public ActionResult PasswordSafetyView()
         {
+            Session["moduleid"] = 2;
             return View();
         }
     }

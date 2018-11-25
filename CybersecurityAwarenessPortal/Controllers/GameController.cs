@@ -65,6 +65,7 @@ namespace CybersecurityAwarenessPortal.Controllers
             }
 
             sqlCon.Close();
+            qr.mod = Convert.ToInt32(Session["moduleid"]);
             //-----------------------------------------------------------------//
             //int empN = qr.empNum;
             int empN = qr.GetEmployeeID();
@@ -74,9 +75,9 @@ namespace CybersecurityAwarenessPortal.Controllers
             //-----------------------------------------------------------------//
 
 
-            int modselect = 1;
+           
 
-            string QuestionQuery = "SELECT * FROM questions where sectionID = " + modselect + "";
+            string QuestionQuery = "SELECT * FROM questions where sectionID = " + qr.mod + "";
 
             SqlCom = new SqlCommand(QuestionQuery);
             SqlCom.Connection = sqlCon;
@@ -181,6 +182,7 @@ namespace CybersecurityAwarenessPortal.Controllers
                 qr.empEmail = Session["username"].ToString();
                 qr.empNum = qr.GetEmployeeID();
                 int empN = qr.GetEmployeeID();
+                qr.mod = Convert.ToInt32(Session["moduleid"]);
                 qr.attemptCount = qr.GetMaxAttemptsM1() + 1;
                 //string query2 = "SELECT * from userProgress where employee_id = " + empN + "";
 
@@ -207,9 +209,9 @@ namespace CybersecurityAwarenessPortal.Controllers
                 ////-----------------------------------------------------------------//
 
 
-                int modselect = 1;
+                
 
-                string QuestionQuery = "SELECT * FROM questions where sectionID = " + modselect + "";
+                string QuestionQuery = "SELECT * FROM questions where sectionID = " + qr.mod + "";
 
                 SqlCom = new SqlCommand(QuestionQuery);
                 SqlCom.Connection = sqlCon;
@@ -295,8 +297,8 @@ namespace CybersecurityAwarenessPortal.Controllers
                 empID.Value = qr.GetEmployeeID();
 
                 SqlParameter modNum = new SqlParameter("@module_num", SqlDbType.Int, 10);
-                modNum.Value = 1;
-                qr.mod = qr.mod + 1;
+                modNum.Value = qr.mod;
+               // qr.mod = qr.mod + 1;
 
                 SqlParameter scoreNum = new SqlParameter("@score", SqlDbType.Int, 10);
 
@@ -373,7 +375,8 @@ namespace CybersecurityAwarenessPortal.Controllers
                 /*}
                 else { }*/
                 sqlCon.Close();
-                if (Convert.ToInt32(scoreNum.Value) >= 80)
+                qr.passPercent = qr.GetPassPercent();
+                if (Convert.ToInt32(scoreNum.Value) >= qr.passPercent)
                 {
                     qr.numOfCompletedModules = qr.GetNumOfModulesCompleted();
                     string result = qr.InsertNumOfModulesCompleted();
@@ -383,7 +386,7 @@ namespace CybersecurityAwarenessPortal.Controllers
             {
 
             };
-            return RedirectToAction("ThreatsOverviewView","ThreatsOverview", qr);
+            return RedirectToAction("ContentView","Content", qr);
         }
     }
 }

@@ -38,6 +38,7 @@ namespace CybersecurityAwarenessPortal.Models
         public List<QuestionRecords> questionInfo { get; set; }
 
         public int numOfCompletedModules { get; set; }
+        public int passPercent { get; set; }
 
         public int GetEmployeeID()
         {
@@ -70,12 +71,13 @@ namespace CybersecurityAwarenessPortal.Models
             string constr = ConfigurationManager.ConnectionStrings["DBConnection"].ConnectionString;
             using (SqlConnection con = new SqlConnection(constr))
             {
-                string query = "SELECT MAX(attempt_num) FROM userProgress WHERE employee_id =@id AND module_num=1";
+                string query = "SELECT MAX(attempt_num) FROM userProgress WHERE employee_id =@id AND module_num=@mod";
                 using (SqlCommand cmd = new SqlCommand(query))
                 {
                     cmd.Connection = con;
                     con.Open();
                     cmd.Parameters.AddWithValue("@id", empNum);
+                    cmd.Parameters.AddWithValue("@mod",mod);
                     using (SqlDataReader sdr = cmd.ExecuteReader())
                     {
                         while (sdr.Read())
@@ -105,6 +107,30 @@ namespace CybersecurityAwarenessPortal.Models
                     cmd.Connection = con;
                     con.Open();
                     cmd.Parameters.AddWithValue("@id", empNum);
+                    using (SqlDataReader sdr = cmd.ExecuteReader())
+                    {
+                        while (sdr.Read())
+                        {
+                            id = sdr.GetInt32(0);
+                        }
+                    }
+                    con.Close();
+                }
+            }
+            return id;
+        }
+
+        public int GetPassPercent()
+        {
+            int id = new int();
+            string constr = ConfigurationManager.ConnectionStrings["DBConnection"].ConnectionString;
+            using (SqlConnection con = new SqlConnection(constr))
+            {
+                string query = "SELECT passPercentage FROM quizOptions";
+                using (SqlCommand cmd = new SqlCommand(query))
+                {
+                    cmd.Connection = con;
+                    con.Open();
                     using (SqlDataReader sdr = cmd.ExecuteReader())
                     {
                         while (sdr.Read())
