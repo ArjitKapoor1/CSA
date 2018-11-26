@@ -18,6 +18,7 @@ namespace CybersecurityAwarenessPortal.Models
         public String answer { get; set; }
 
         public int attemptCount { get; set; }
+        public int adminPassMark { get; set; }
 
         public int empNum { get; set; }
 
@@ -25,17 +26,44 @@ namespace CybersecurityAwarenessPortal.Models
 
         public String empEmail { get; set; }
 
+
         public String userCorrectCount { get; set; }
 
         public String[,] questionnaire { get; set; }
 
-        public String[] questionTest { get; set; }
 
         public int Counter { get; set; }
 
         public int questionCounter { get; set; }
 
         public List<QuestionRecords> questionInfo { get; set; }
+        //public String questionID { get; set; }
+        //public String question { get; set; }
+        //public String optionA { get; set; }
+        //public String optionB { get; set; }
+        //public String optionC { get; set; }
+        //public String optionD { get; set; }
+        //public String answer { get; set; }
+
+        //public int attemptCount { get; set; }
+
+        //public int empNum { get; set; }
+
+        //public int mod { get; set; }
+
+        //public String empEmail { get; set; }
+
+        //public String userCorrectCount { get; set; }
+
+        //public String[,] questionnaire { get; set; }
+
+        public String[] questionTest { get; set; }
+
+        //public int Counter { get; set; }
+
+        //public int questionCounter { get; set; }
+
+        //public List<QuestionRecords> questionInfo { get; set; }
 
         public int numOfCompletedModules { get; set; }
         public int passPercent { get; set; }

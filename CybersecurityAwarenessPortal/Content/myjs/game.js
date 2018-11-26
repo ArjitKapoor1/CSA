@@ -186,7 +186,7 @@ function loop() {
             laser.y = 0;
             shootResult(1);
         } else {
-
+                        
             laser.x = 1199;
             laser.y = 0;
         }
@@ -214,7 +214,7 @@ function loop() {
             alert("C, Point 1");
             laser.x = 1199;
             laser.y = 0;
-
+            
             shootResult(3);
         }
 
@@ -225,7 +225,7 @@ function loop() {
             laser.y = 0;
             shootResult(4);
         } else {
-
+            
             laser.x = 1199;
             laser.y = 0;
             alert("D, Point 1");

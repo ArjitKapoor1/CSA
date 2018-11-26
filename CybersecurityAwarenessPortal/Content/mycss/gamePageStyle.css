@@ -1,0 +1,164 @@
+﻿body {
+    border: solid;
+    width: 1280px;
+    height: 720px;
+}
+
+#OptionA, #OptionB, #OptionC, #OptionD {
+    background: #ffff00;
+    border-radius: 60px;
+    width: 400px;
+    height: 96px;
+    display: none;
+    position: absolute;
+}
+
+#OptionA {
+    margin-top: 129px;
+    margin-left: 30px;
+}
+
+#OptionB {
+    margin-top: 601px;
+    margin-left: 30px;
+}
+
+#OptionC {
+    margin-top: 129px;
+    margin-left: 850px;
+}
+
+#OptionD {
+    margin-top: 601px;
+    margin-left: 850px;
+}
+
+#buttonA, #buttonB, #buttonC, #buttonD {
+    background: #ffff00;
+    border-radius: 40px;
+    width: 380px;
+    height: 74px;
+    margin: 10px;
+    text-align: center;
+    padding: 0px;
+    font-size: 20px;
+    font-family: 'Comic Sans MS';
+}
+
+#QuestionArea {
+    background: transparent;
+    border-style: none;
+    border-width: 2px;
+    border-color: black;
+    border-radius: 30px;
+    display: none;
+    text-align: center;
+    vertical-align: central;
+    width: 500px;
+    height: 70px;
+    position: absolute;
+    margin-top: 242px;
+    margin-left: 385px;
+    color: black;
+    font-size: 25px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+
+#img1, #img2, #img3, #img4 {
+    background: transparent;
+    width: 100px;
+    height: 100px;
+    position: absolute;
+}
+
+#img1 {
+    top: 38px;
+    left: 190px;
+}
+
+#img2 {
+    top: 508px;
+    left: 190px;
+}
+
+#img3 {
+    top: 38px;
+    left: 1010px;
+}
+
+#img4 {
+    top: 508px;
+    left: 1010px;
+}
+
+#canvas {
+}
+
+#gamepage {
+    background: url("/Content/myimages/FinalMenu.gif");
+    background-size: 1280px 720px;
+    width: 1280px;
+    height: 720px;
+    position: absolute;
+    display: block;
+}
+
+#optionALabel, #optionBLabel, #optionCLabel, #optionDLabel, #answerLabel {
+    display: block;
+}
+
+#questionnaires, #targetSprite {
+    display: none;
+}
+
+#endgamepage {
+    background: url("/Content/myimages/background.png");
+    background-size: 500px 500px;
+    border-radius: 60px;
+    width: 500px;
+    height: 620px;
+    position: absolute;
+    left: 390px;
+    top: 50px;
+    display: block;
+}
+
+#enquery {
+    background: url("/Content/myimages/background.png");
+    background-size: 500px 500px;
+    border-radius: 60px;
+    width: 500px;
+    height: 620px;
+    position: absolute;
+    left: 390px;
+    top: 50px;
+}
+
+#image1, #image2, #image3, #image4 {
+    width: 100px;
+    height: 100px;
+    background: url('https://cdn.codeandweb.com/blog/2016/05/10/how-to-create-a-sprite-sheet/spritestrip.png') 0px 0px;
+    background-size: 600px 100px;
+    position: absolute;
+}
+
+#image1 {
+    top: 38px;
+    left: 190px;
+}
+
+#image2 {
+    top: 508px;
+    left: 190px;
+}
+
+#image3 {
+    top: 38px;
+    left: 1010px;
+}
+
+#image4 {
+    top: 508px;
+    left: 1010px;
+}

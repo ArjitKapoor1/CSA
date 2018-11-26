@@ -75,8 +75,33 @@ namespace CybersecurityAwarenessPortal.Controllers
             //-----------------------------------------------------------------//
 
 
-           
+            //***************************************
+            //***************************************
+            //***************************************
+            string adminPassMarkQuery = "SELECT * from quizOptions";
 
+            SqlCom = new SqlCommand(adminPassMarkQuery);
+            SqlCom.Connection = sqlCon;
+
+            sqlCon.Open();
+
+            sdr = SqlCom.ExecuteReader();
+
+            if (sdr.HasRows)
+            {
+                while (sdr.Read())
+                {
+                    qr.adminPassMark = (int)sdr["passPercentage"];
+                }
+            }
+
+            sqlCon.Close();
+
+            //***************************************
+            //***************************************
+            //***************************************
+            //***************************************
+            Random radNum = new Random();
             string QuestionQuery = "SELECT * FROM questions where sectionID = " + qr.mod + "";
 
             SqlCom = new SqlCommand(QuestionQuery);
@@ -100,48 +125,14 @@ namespace CybersecurityAwarenessPortal.Controllers
                     detail.optionC = sdr["optionC"].ToString();
                     detail.optionD = sdr["optionD"].ToString();
                     detail.answer = sdr["correct"].ToString();
-
-                    //quest[counter, 0] = detail.questionID;
-                    quest[counter, 1] = detail.question;
-                    quest[counter, 2] = detail.optionA;
-                    quest[counter, 3] = detail.optionB;
-                    quest[counter, 4] = detail.optionC;
-                    quest[counter, 5] = detail.optionD;
-                    quest[counter, 6] = detail.answer;
-                    //ViewBag.optionC = detail.optionC;
                     counter++;
                     objmodel.Add(detail);
-                }/*
-                //test content when cant connect to database
-            int counter = 0;
-            String[,] quest = new String[200, 200];
-            String[] questionTest = new String[200];
-          
-            List<QuestionRecords> objmodel = new List<QuestionRecords>();
-            
-            var detail = new QuestionRecords();
-                //detail.questionID = sdr["QuestionID"].ToString();
-                detail.question = "QuestionA";
-                detail.optionA = "OptA";
-                detail.optionB = "OptB";
-                detail.optionC = "OptC";
-                detail.optionD = "OptD";
-                detail.answer = "D";
-                objmodel.Add(detail);
-            //-------------------------------------*/
-                questionTest[0] = quest[0, 0];
-                questionTest[1] = quest[0, 1];
-                questionTest[2] = quest[0, 2];
-                questionTest[3] = quest[0, 3];
-                questionTest[4] = quest[0, 4];
-                questionTest[5] = quest[0, 5];
-                questionTest[6] = quest[0, 6];
+                }
+
 
                 qr.Counter = 0;
                 qr.questionCounter = counter;
-                qr.questionTest = questionTest;
                 qr.questionInfo = objmodel;
-                qr.questionnaire = quest;
                 sqlCon.Close();
             }
             return View("GamePage2", qr);
@@ -245,24 +236,8 @@ namespace CybersecurityAwarenessPortal.Controllers
                         //ViewBag.optionC = detail.optionC;
                         counter++;
                         objmodel.Add(detail);
-                    }/*
-                //test content when cant connect to database
-            int counter = 0;
-            String[,] quest = new String[200, 200];
-            String[] questionTest = new String[200];
-          
-            List<QuestionRecords> objmodel = new List<QuestionRecords>();
-            
-            var detail = new QuestionRecords();
-                //detail.questionID = sdr["QuestionID"].ToString();
-                detail.question = "QuestionA";
-                detail.optionA = "OptA";
-                detail.optionB = "OptB";
-                detail.optionC = "OptC";
-                detail.optionD = "OptD";
-                detail.answer = "D";
-                objmodel.Add(detail);
-            //-------------------------------------*/
+                    }
+
                     questionTest[0] = quest[0, 0];
                     questionTest[1] = quest[0, 1];
                     questionTest[2] = quest[0, 2];
@@ -279,16 +254,7 @@ namespace CybersecurityAwarenessPortal.Controllers
                     sqlCon.Close();
                 }
                 //----------------------------------------------------------//
-                SqlParameter testP = new SqlParameter("@testinsert", SqlDbType.VarChar, 100);
-                testP.Value = "Success Test";
 
-                SqlParameter testP2 = new SqlParameter("@testinsert", SqlDbType.VarChar, 100);
-                var keys = Request.Form.AllKeys;
-
-
-                testP2.Value = Request.Form.Get(keys[0]);
-
-                qr.userCorrectCount = Request.Form.Get(keys[0]);
 
 
                 
@@ -298,23 +264,25 @@ namespace CybersecurityAwarenessPortal.Controllers
 
                 SqlParameter modNum = new SqlParameter("@module_num", SqlDbType.Int, 10);
                 modNum.Value = qr.mod;
-               // qr.mod = qr.mod + 1;
+                // qr.mod = qr.mod + 1;
+
+                SqlParameter pointNum = new SqlParameter("@pointNum", SqlDbType.Int, 10);
 
                 SqlParameter scoreNum = new SqlParameter("@score", SqlDbType.Int, 10);
 
-
+                var keys = Request.Form.AllKeys;
                 string[] test1 = Request.Form.AllKeys;
 
                 string item1 = Array.Find(test1, element => element.Contains("userCorrectLabel"));
-
                 scoreNum.Value = Request.Form.Get(keys[0]);
+                //scoreNum.Value = Request.Form.Get(keys[0]);
                 //qr.userCorrectCount =(int) Request.Form.Get(keys[0]) + 1;
                 //scoreNum.Value = 60;
 
                 string[] test2 = Request.Form.AllKeys;
 
                 string item2 = Array.Find(test2, element => element.Contains("currentAttemptLabel"));
-
+                string item3 = Array.Find(test2, element => element.Contains("pointEndGamePageLabel"));
 
                 SqlParameter temptNum = new SqlParameter("@attemptNum", SqlDbType.Int, 10);
                 qr.attemptCount = qr.GetMaxAttemptsM1() + 1;
