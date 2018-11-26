@@ -1,0 +1,129 @@
+﻿@*@model CybersecurityAwarenessPortal.Models.ThreatsOverviewModel*@
+@{
+    ViewBag.Title = "Email Protection";
+}
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <style>
+        body {
+            font: 400 15px Lato, sans-serif;
+            line-height: 1.8;
+            color: #818181;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        }
+
+        h2 {
+            font-size: 24px;
+            color: blue;
+            font-weight: 500;
+            margin-bottom: 30px;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif
+        }
+
+        .container-fluid {
+            padding: 60px 50px;
+            top: 150px;
+        }
+
+        .bg-grey {
+            background-color: #f6f6f6;
+        }
+
+        .thumbnail {
+            padding: 0 0 15px 0;
+            border: none;
+            border-radius: 0;
+        }
+
+            .thumbnail img {
+                width: 100%;
+                height: 100%;
+                margin-bottom: 10px;
+            }
+
+        img #internet {
+            height: 120%;
+        }
+
+        .navbar {
+            margin-bottom: 0;
+            background-color: #f4511e;
+            z-index: 9999;
+            border: 0;
+            font-size: 15px !important;
+            line-height: 1.42857143 !important;
+            border-radius: 0;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        }
+
+        .slideanim {
+            visibility: visible;
+        }
+
+        p, li {
+            text-align: left;
+        }
+    </style>
+</head>
+<body>
+    <div id="portfolio" class="container-fluid text-center bg-grey">
+        <h2 style="position:relative; top:0px;">Email Protection</h2><br>
+
+        <div class="row text-center slideanim" style="position:relative; top:30px;">
+            <div class="col-sm-4">
+                <div class="thumbnail">
+                    <img src="~/Images/E2FA.png" @*alt="Paris"*@ style="height:183px;" width="400" height="320">
+                    <h5><strong>2FA </strong></h5>
+                    <a class="btn btn-info" href="@Url.Action("EmailFAView", "EmailFA")">Learn 2FA &raquo;</a>
+                </div>
+            </div>
+            <div class="col-sm-4">
+                <div class="thumbnail">
+                    <img src="~/Images/PReset.PNG" alt="New York" style="height:183px;" width="400" height="300">
+                    <h5><strong>Password Reset </strong></h5>
+                    <a class="btn btn-info" href="@Url.Action("PasswordResetView", "PasswordReset")">Learn Password Reset &raquo;</a>
+                </div>
+            </div>
+
+            <div class="col-sm-4">
+                <div class="thumbnail">
+                    <img src="~/Images/SpamP.PNG" alt="New York" style="height:183px;" width="400" height="320" id="internet">
+                    <h5><strong> Spam Protection </strong></h5>
+                    <a class="btn btn-info" href="@Url.Action("SpamProtectionView", "SpamProtection")">Learn Spam Protection &raquo;</a>
+                </div>
+            </div>
+        </div>
+        <div class="row text-center slideanim" style="position:relative; top:30px;">
+            <div class="col-sm-4">
+                <div class="thumbnail">
+                    <img src="~/Images/AttachmentPolicy.PNG" @*alt="Paris"*@ style="height:183px;" width="400" height="300">
+                    <h5><strong> Attachment Policy </strong></h5>
+                    <a class="btn btn-info" href="@Url.Action("AttachmentPolicyView", "AttachmentPolicy")">Learn Attachment Policy &raquo;</a>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="row" style="position:relative; top:30px;">
+            @{
+                CybersecurityAwarenessPortal.Models.UserProgressModel upm = new CybersecurityAwarenessPortal.Models.UserProgressModel();
+                upm.EmployeeEmail = Session["username"].ToString();
+                upm.EmployeeID = upm.GetEmployeeID();
+                int attempt = upm.GetMaxAttemptsM4();
+                upm.availAttempts = upm.GetAvailAttempts();
+                if (attempt < upm.availAttempts)
+                {
+                    <a class="btn btn-success" href="@Url.Action("GamePage2", "Game")">Take The Quiz &raquo;</a>
+                }
+            }
+            <a class="btn btn-danger" href="@Url.Action("Index","Home")">Home &raquo;</a>
+        </div>
+    </div>
+
+</body>

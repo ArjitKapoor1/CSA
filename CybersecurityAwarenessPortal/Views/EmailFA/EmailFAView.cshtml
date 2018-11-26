@@ -1,0 +1,102 @@
+﻿@{
+    ViewBag.Title = "2FA";
+}
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <style>
+        body {
+            font: 400 15px Lato, sans-serif;
+            line-height: 1.8;
+            color: #818181;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        }
+
+        h2 {
+            font-size: 24px;
+            color: blue;
+            font-weight: 500;
+            margin-bottom: 30px;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif
+        }
+
+        .container-fluid {
+            padding: 60px 50px;
+            top: 150px;
+        }
+
+        .bg-grey {
+            background-color: #f6f6f6;
+        }
+
+        .thumbnail {
+            padding: 0 0 15px 0;
+            border: none;
+            border-radius: 0;
+        }
+
+            .thumbnail img {
+                width: 100%;
+                height: 100%;
+                margin-bottom: 10px;
+            }
+
+        img #internet {
+            height: 120%;
+        }
+
+        .navbar {
+            margin-bottom: 0;
+            background-color: #f4511e;
+            z-index: 9999;
+            border: 0;
+            font-size: 15px !important;
+            line-height: 1.42857143 !important;
+            border-radius: 0;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        }
+
+        .slideanim {
+            visibility: visible;
+        }
+
+        p, li {
+            text-align: left;
+        }
+    </style>
+</head>
+<body>
+    <div id="portfolio" class="container-fluid text-center bg-grey">
+        <div class="row">
+            <h2>2FA (Two-Factor Authentication) and Email </h2>
+            <ul>
+                <li>
+                    We covered this a little bit earlier, but now it's focused more around the email. It's because email is the most important account needing protection, because if someone gains access to your email, they can utilize the password reset function to gain access to other services. Typically, when you press the password reset button, it sends you an email asking you, "Did you reset your password? Did you attempt to reset your password?" Typically, you just click a link and then you enter in your new password. So, as we mentioned earlier, two-factor authentication is a great way to protect your email from being compromised.
+                </li>
+                <br />
+                <li>
+                    It is recommend to implement it, so that someone can't just gain access to your email, then utilize it to reset all of your other passwords. So, it is important to make sure that's enabled if your service supports it. And most email providers, nowadays, support twofactor authentication. Companies will have guides on their website, not just to walk you through setting it up but how to use it as well. Then, once set up, the attacker would need your password and your cellphone in order to break into your email account.
+                </li>
+
+              
+            </ul><br />
+
+            <img src="~/Images/E2FATips.PNG" style="width:450px;display:block; margin-left:auto; margin-right:auto;" class="img-responsive" /> <br />
+            @*<h2>Cybersecurity Threats: </h2>
+                <hr />
+                <iframe width="560" height="315" src="http://www.youtube.com/embed/dVW1FNWSaTg" frameborder="0" allowfullscreen></iframe>*@
+        </div>
+
+
+        <div class="row" style="position:relative; top:30px;">
+            <a class="btn btn-danger" href="@Url.Action("EmailProtectionView","EmailProtection")">Back &raquo;</a>
+        </div>
+    </div>
+
+</body>
+s

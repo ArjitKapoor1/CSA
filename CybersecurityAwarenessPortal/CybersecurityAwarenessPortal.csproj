@@ -220,7 +220,10 @@
     <Compile Include="App_Start\IdentityConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\AdminController.cs" />
+    <Compile Include="Controllers\AttachmentPolicyController.cs" />
     <Compile Include="Controllers\ContentController.cs" />
+    <Compile Include="Controllers\EmailFAController.cs" />
+    <Compile Include="Controllers\EmailProtectionController.cs" />
     <Compile Include="Controllers\GameController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\HyperTextController.cs" />
@@ -228,6 +231,7 @@
     <Compile Include="Controllers\IOTController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="Controllers\MalwareController.cs" />
+    <Compile Include="Controllers\PasswordResetController.cs" />
     <Compile Include="Controllers\PasswordSafetyController.cs" />
     <Compile Include="Controllers\PhishingController.cs" />
     <Compile Include="Controllers\PublicWifiController.cs" />
@@ -236,6 +240,7 @@
     <Compile Include="Controllers\ResetAttemptsController.cs" />
     <Compile Include="Controllers\SearchEngineSafetyController.cs" />
     <Compile Include="Controllers\SocialEngineeringController.cs" />
+    <Compile Include="Controllers\SpamProtectionController.cs" />
     <Compile Include="Controllers\ThreatsOverviewController.cs" />
     <Compile Include="Controllers\UserProgressController.cs" />
     <Compile Include="Controllers\WebContentFilterController.cs" />
@@ -310,6 +315,10 @@
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
     <Content Include="Images\2FA.PNG" />
+    <Content Include="Images\AttachmentPolicy.PNG" />
+    <Content Include="Images\AttachmentPolicyTips.PNG" />
+    <Content Include="Images\E2FA.PNG" />
+    <Content Include="Images\E2FATips.PNG" />
     <Content Include="Images\Edit.png" />
     <Content Include="Images\GrowthOfMalware.PNG" />
     <Content Include="Images\HTTPS.PNG" />
@@ -326,6 +335,8 @@
     <Content Include="Images\PhishingStats.PNG" />
     <Content Include="Images\PhishingTips.PNG" />
     <Content Include="Images\PhishinStats.PNG" />
+    <Content Include="Images\PReset.PNG" />
+    <Content Include="Images\PResetTips.PNG" />
     <Content Include="Images\PS1.PNG" />
     <Content Include="Images\PS2.PNG" />
     <Content Include="Images\PS3.PNG" />
@@ -340,6 +351,8 @@
     <Content Include="Images\SETips.PNG" />
     <Content Include="Images\SocialEng.PNG" />
     <Content Include="Images\SocialEngTips.PNG" />
+    <Content Include="Images\SpamP.PNG" />
+    <Content Include="Images\SpamPTips.PNG" />
     <Content Include="Images\SQ1.PNG" />
     <Content Include="Images\SQ2.PNG" />
     <Content Include="Images\TypesOfMalware.PNG" />
@@ -434,6 +447,11 @@
     <Content Include="Views\HyperText\HyperTextView.cshtml" />
     <Content Include="Views\PublicWifi\PublicWifiView.cshtml" />
     <Content Include="Views\IOT\IOTView.cshtml" />
+    <Content Include="Views\EmailProtection\EmailProtectionView.cshtml" />
+    <Content Include="Views\EmailFA\EmailFAView.cshtml" />
+    <Content Include="Views\PasswordReset\PasswordResetView.cshtml" />
+    <Content Include="Views\SpamProtection\SpamProtectionView.cshtml" />
+    <Content Include="Views\AttachmentPolicy\AttachmentPolicyView.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -1,0 +1,121 @@
+﻿@{
+    ViewBag.Title = "Attachment Policy";
+}
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <style>
+        body {
+            font: 400 15px Lato, sans-serif;
+            line-height: 1.8;
+            color: #818181;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        }
+
+        h2 {
+            font-size: 24px;
+            color: blue;
+            font-weight: 500;
+            margin-bottom: 30px;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif
+        }
+
+        .container-fluid {
+            padding: 60px 50px;
+            top: 150px;
+        }
+
+        .bg-grey {
+            background-color: #f6f6f6;
+        }
+
+        .thumbnail {
+            padding: 0 0 15px 0;
+            border: none;
+            border-radius: 0;
+        }
+
+            .thumbnail img {
+                width: 100%;
+                height: 100%;
+                margin-bottom: 10px;
+            }
+
+        img #internet {
+            height: 120%;
+        }
+
+        .navbar {
+            margin-bottom: 0;
+            background-color: #f4511e;
+            z-index: 9999;
+            border: 0;
+            font-size: 15px !important;
+            line-height: 1.42857143 !important;
+            border-radius: 0;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        }
+
+        .slideanim {
+            visibility: visible;
+        }
+
+        p, li {
+            text-align: left;
+        }
+    </style>
+</head>
+<body>
+    <div id="portfolio" class="container-fluid text-center bg-grey">
+        <div class="row">
+            <h2>Attachment Policy </h2>
+            <ul>
+                <li>
+                    When it comes to email attachments, email attachments are one of the most common ways to get viruses or malware. Even though an attachment might look like a document, Excel file, PDF, it might contain a virus or malware. As we saw from the earlier statistics, quite a lot of people open attachments from email addresses that they're unsure of, that they have no idea who they are. So, you want to make sure that people in your organization, and that everyone that you know, knows that if you don't know who that email is coming from, don't download the attachment.
+                </li>
+                <br />
+
+                <li>
+                    Some of the things that you can do to make sure that employees are not doing that, or that other users or family members aren't doing that; you can put rules in place to prevent certain types of attachment files from being able to be sent or being able to be received. Of course, some people say that's going to harm us, we're not going to be as productive if people can't receive Excel documents or Word documents via email.
+                </li>
+                <br />
+
+                <li>
+                    That's why, maybe, the best approach is to train employees on what attachments can be harmful, what attachment we can find open, so forth. So, you have a good understanding of when to open attachments and when you shouldn't, because not only, sometimes, is it the attachment that you download that immediately infects your computer, but sometimes it waits for you to open that attachment and then maybe there's a macro in the Excel or Word document that's going to be executed once you open the document.
+                </li>
+
+                <br />
+
+                <li>
+                    That email might look a little bit fishy; you don't think that it's something you were expecting or something that they should have sent to you. So, in those situations you want to also make very sure that you're not clicking on something that's malicious. Usually, when there's something fishy, you should take it and send it to your IT department.
+                </li>
+
+                <br />
+
+                <li>
+                    Then, they probably want to go ahead- and you want to first delete that email. Then, the person on the other end that sent you the email, should then go in and reset their passwords, reset their security questions, because they probably had a breach. Someone has accessed their email account and now they're sending out malicious emails to their entire address book. So, that's another part of this email security and attachment policy.
+                </li>
+
+
+
+            </ul><br />
+
+            <img src="~/Images/AttachmentPolicyTips.PNG" style="width:450px;display:block; margin-left:auto; margin-right:auto;" class="img-responsive" /> <br />
+            @*<h2>Cybersecurity Threats: </h2>
+                <hr />
+                <iframe width="560" height="315" src="http://www.youtube.com/embed/dVW1FNWSaTg" frameborder="0" allowfullscreen></iframe>*@
+        </div>
+
+
+        <div class="row" style="position:relative; top:30px;">
+            <a class="btn btn-danger" href="@Url.Action("EmailProtectionView","EmailProtection")">Back &raquo;</a>
+        </div>
+    </div>
+
+</body>
+s

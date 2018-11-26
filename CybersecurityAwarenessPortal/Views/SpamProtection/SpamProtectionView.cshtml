@@ -1,0 +1,126 @@
+﻿@{
+    ViewBag.Title = "Spam Protection";
+}
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <style>
+        body {
+            font: 400 15px Lato, sans-serif;
+            line-height: 1.8;
+            color: #818181;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        }
+
+        h2 {
+            font-size: 24px;
+            color: blue;
+            font-weight: 500;
+            margin-bottom: 30px;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif
+        }
+
+        .container-fluid {
+            padding: 60px 50px;
+            top: 150px;
+        }
+
+        .bg-grey {
+            background-color: #f6f6f6;
+        }
+
+        .thumbnail {
+            padding: 0 0 15px 0;
+            border: none;
+            border-radius: 0;
+        }
+
+            .thumbnail img {
+                width: 100%;
+                height: 100%;
+                margin-bottom: 10px;
+            }
+
+        img #internet {
+            height: 120%;
+        }
+
+        .navbar {
+            margin-bottom: 0;
+            background-color: #f4511e;
+            z-index: 9999;
+            border: 0;
+            font-size: 15px !important;
+            line-height: 1.42857143 !important;
+            border-radius: 0;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        }
+
+        .slideanim {
+            visibility: visible;
+        }
+
+        p, li {
+            text-align: left;
+        }
+    </style>
+</head>
+<body>
+    <div id="portfolio" class="container-fluid text-center bg-grey">
+        <div class="row">
+            <h2>Spam Protection </h2>
+            <ul>
+                <li>
+                    As we know, everyone out there gets spam. Even with the best protection, some still slips through the cracks. Some email providers, of course, have better spam protection than others. There are third party anti-spam products out there that can supplement the protection provided by the email provider.
+                </li>
+                <br />
+                <li>
+                    When it comes to spam emails, never open the spam emails, even if you think it's funny about the subject line and you really want to see that content inside. The reason why you don’t want to open up the emails is; lots of times these spam providers have read receipts on their email. So, they know how many people open the emails. They know what email addresses open the emails.
+                </li>
+                <br />
+
+                <li>
+                    So, when you open that email, they now know that your email address is a legitimate email address, and they know that there is a person who is actively checking that email address. You want to be very careful to not open those emails, because now you have just told the spammers, "Send this person even more spam."
+                </li>
+
+                <br />
+
+                <li>
+                    The same thing goes with responding to spam emails. You're letting them know that you exist and that you're a real person. So, now they can go ahead and they'll send you even more spam. Initially, they'll send out spam to every email address they can think of. Computers will be randomly generating email addresses. They don't know whether an email address is valid or not valid. So, they're testing out the waters and seeing where they get bites.
+                </li>
+
+                <br />
+
+                <li>
+                    Be careful when using your email address to sign up for contests or enter websites. The reason why is because typically when they are going to give you something free, or they are requesting your email address for something, lots of times they are going to sell that email address to marketing companies and to other companies to make money. So, now they are giving your email address to people who are spamming you with stuff and offers that you don't want.
+                </li>
+
+                <br />
+
+                <li>
+                    When posting your email to a public website, like a public classified website, always add special breaks in your email address. Don't write out your email address with the proper at sign or the proper period symbol, because you don't want that link to be easily copied and pasted, or you don't want that link to be able to be clicked on. The reason is why is spam bots are trolling the internet, looking for email addresses.
+                </li>
+
+
+
+            </ul><br />
+
+            <img src="~/Images/SpamPTips.PNG" style="width:450px;display:block; margin-left:auto; margin-right:auto;" class="img-responsive" /> <br />
+            @*<h2>Cybersecurity Threats: </h2>
+                <hr />
+                <iframe width="560" height="315" src="http://www.youtube.com/embed/dVW1FNWSaTg" frameborder="0" allowfullscreen></iframe>*@
+        </div>
+
+
+        <div class="row" style="position:relative; top:30px;">
+            <a class="btn btn-danger" href="@Url.Action("EmailProtectionView","EmailProtection")">Back &raquo;</a>
+        </div>
+    </div>
+
+</body>
+s
