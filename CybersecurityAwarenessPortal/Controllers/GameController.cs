@@ -378,7 +378,7 @@ namespace CybersecurityAwarenessPortal.Controllers
                 qr.passPercent = qr.GetPassPercent();
                 if (Convert.ToInt32(scoreNum.Value) >= qr.passPercent)
                 {
-                  //  qr.numOfCompletedModules = qr.GetNumOfModulesCompleted();
+
                     string result = qr.InsertNumOfModulesCompleted();
                 }
             }
