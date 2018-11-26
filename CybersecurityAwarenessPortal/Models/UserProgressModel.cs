@@ -13,7 +13,6 @@ namespace CybersecurityAwarenessPortal.Models
     public class UserProgressModel
     {
         public int numOfCompletedModules { get; set; }
-
         public int EmployeeID { get; set; }
         public string EmployeeEmail { get; set; }
         public double percentage { get; set; }

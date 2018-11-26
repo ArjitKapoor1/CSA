@@ -1,0 +1,115 @@
+﻿@{
+    ViewBag.Title = "Web Content Filter";
+}
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <style>
+        body {
+            font: 400 15px Lato, sans-serif;
+            line-height: 1.8;
+            color: #818181;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        }
+
+        h2 {
+            font-size: 24px;
+            color: blue;
+            font-weight: 500;
+            margin-bottom: 30px;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif
+        }
+
+        .container-fluid {
+            padding: 60px 50px;
+            top: 150px;
+        }
+
+        .bg-grey {
+            background-color: #f6f6f6;
+        }
+
+        .thumbnail {
+            padding: 0 0 15px 0;
+            border: none;
+            border-radius: 0;
+        }
+
+            .thumbnail img {
+                width: 100%;
+                height: 100%;
+                margin-bottom: 10px;
+            }
+
+        img #internet {
+            height: 120%;
+        }
+
+        .navbar {
+            margin-bottom: 0;
+            background-color: #f4511e;
+            z-index: 9999;
+            border: 0;
+            font-size: 15px !important;
+            line-height: 1.42857143 !important;
+            border-radius: 0;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        }
+
+        .slideanim {
+            visibility: visible;
+        }
+
+        p, li {
+            text-align: left;
+        }
+    </style>
+</head>
+<body>
+    <div id="portfolio" class="container-fluid text-center bg-grey">
+        <div class="row">
+            <h2>Web Content Filter</h2>
+            <ul>
+                <li>
+                    So, a web content filter, filters web traffic based off pre-configured policies set by the administrator. So, what that means is that the administrator could decide; at work, he don't want people to be able to search Facebook. Or, at work, he don't want people to go to sports websites, or play fantasy football. So, you can put rules in place to not allow employees to do this.
+                </li>
+                <br />
+                <li>
+                    There are both home versions and corporate versions, of course. The home versions focus on child safety. So, if you don't want your kids going to specific websites, like YouTube or other video sites, or you don't want them stumbling upon content that they shouldn't be looking at.
+                </li>
+
+                <br />
+                <li>
+                   The corporate versions focus on employee productivity. If Facebook is allowed at work, sometimes that leads people to surf Facebook for several hours a day. Or they're always doing fantasy football, reading the sports, reading the news and so forth. So, web content filtering not just can restrict what sites users can go to, you can also restrict how long they can go to it for. So, you could say they can go to this website for 30 minutes a day, an hour a day, or what have you.
+                </li>
+
+                <br />
+                <li>
+                    Not only can it restrict the content that's displayed to a certain audience, it can also be utilized to filter malicious content and protect the user. This is another reason for them, because they want to make sure that users aren't going to those risky or non-reputable websites.
+                </li>
+
+                <br />
+                <li>
+                    By implementing a web content filter, not only can it help with productivity, or not only can it help protect your kids from going to bad websites, it can also help to protect you from any sort of malicious content, or those malicious advertisements that I mentioned. So, it has two different areas that it helps you with.
+                </li>
+
+            </ul><br />
+
+            <img src="~/Images/WCFTips.PNG" style="width:420px;display:block; margin-left:auto; margin-right:auto;" class="img-responsive" /> <br />
+            @*<h2>Cybersecurity Threats: </h2>
+                <hr />
+                <iframe width="560" height="315" src="http://www.youtube.com/embed/dVW1FNWSaTg" frameborder="0" allowfullscreen></iframe>*@
+        </div>
+
+
+        <div class="row" style="position:relative; top:30px;">
+            <a class="btn btn-danger" href="@Url.Action("InternetProtectionView","InternetProtection")">Back &raquo;</a>
+        </div>
+    </div>
+
+</body>

@@ -223,16 +223,22 @@
     <Compile Include="Controllers\ContentController.cs" />
     <Compile Include="Controllers\GameController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\HyperTextController.cs" />
+    <Compile Include="Controllers\InternetProtectionController.cs" />
+    <Compile Include="Controllers\IOTController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="Controllers\MalwareController.cs" />
     <Compile Include="Controllers\PasswordSafetyController.cs" />
     <Compile Include="Controllers\PhishingController.cs" />
+    <Compile Include="Controllers\PublicWifiController.cs" />
     <Compile Include="Controllers\QuizOptionsController.cs" />
     <Compile Include="Controllers\RegisterClientController.cs" />
     <Compile Include="Controllers\ResetAttemptsController.cs" />
+    <Compile Include="Controllers\SearchEngineSafetyController.cs" />
     <Compile Include="Controllers\SocialEngineeringController.cs" />
     <Compile Include="Controllers\ThreatsOverviewController.cs" />
     <Compile Include="Controllers\UserProgressController.cs" />
+    <Compile Include="Controllers\WebContentFilterController.cs" />
     <Compile Include="ErrorHandler\AiHandleErrorAttribute.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -306,6 +312,11 @@
     <Content Include="Images\2FA.PNG" />
     <Content Include="Images\Edit.png" />
     <Content Include="Images\GrowthOfMalware.PNG" />
+    <Content Include="Images\HTTPS.PNG" />
+    <Content Include="Images\HTTPSS.PNG" />
+    <Content Include="Images\HTTPSTips.PNG" />
+    <Content Include="Images\IOT.PNG" />
+    <Content Include="Images\IOTTips.PNG" />
     <Content Include="Images\Malware.PNG" />
     <Content Include="Images\MalwareTips.PNG" />
     <Content Include="Images\PasswordSafetyTips.PNG" />
@@ -320,14 +331,20 @@
     <Content Include="Images\PS3.PNG" />
     <Content Include="Images\PS4.PNG" />
     <Content Include="Images\PS5.PNG" />
+    <Content Include="Images\PublicWifi.PNG" />
+    <Content Include="Images\PublicWifiTips.PNG" />
     <Content Include="Images\Reset.png" />
     <Content Include="Images\SEng.PNG" />
     <Content Include="Images\Server.png" />
+    <Content Include="Images\SES.PNG" />
+    <Content Include="Images\SETips.PNG" />
     <Content Include="Images\SocialEng.PNG" />
     <Content Include="Images\SocialEngTips.PNG" />
     <Content Include="Images\SQ1.PNG" />
     <Content Include="Images\SQ2.PNG" />
     <Content Include="Images\TypesOfMalware.PNG" />
+    <Content Include="Images\WCF.PNG" />
+    <Content Include="Images\WCFTips.PNG" />
     <Content Include="InternetProtection.PNG" />
     <Content Include="main.css" />
     <Content Include="metisMenu.min.css" />
@@ -411,6 +428,12 @@
     <Content Include="Views\UserProgress\UserProgressView.cshtml" />
     <Content Include="Views\Game\GamePage2.cshtml" />
     <Content Include="Views\ResetAttempts\ResetAttemptsView.cshtml" />
+    <Content Include="Views\InternetProtection\InternetProtectionView.cshtml" />
+    <Content Include="Views\SearchEngineSafety\SearchEngineSafetyView.cshtml" />
+    <Content Include="Views\WebContentFilter\WebContentFilterView.cshtml" />
+    <Content Include="Views\HyperText\HyperTextView.cshtml" />
+    <Content Include="Views\PublicWifi\PublicWifiView.cshtml" />
+    <Content Include="Views\IOT\IOTView.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

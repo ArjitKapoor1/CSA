@@ -1,0 +1,125 @@
+﻿@{
+    ViewBag.Title = "HTTPS";
+}
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <style>
+        body {
+            font: 400 15px Lato, sans-serif;
+            line-height: 1.8;
+            color: #818181;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        }
+
+        h2 {
+            font-size: 24px;
+            color: blue;
+            font-weight: 500;
+            margin-bottom: 30px;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif
+        }
+
+        .container-fluid {
+            padding: 60px 50px;
+            top: 150px;
+        }
+
+        .bg-grey {
+            background-color: #f6f6f6;
+        }
+
+        .thumbnail {
+            padding: 0 0 15px 0;
+            border: none;
+            border-radius: 0;
+        }
+
+            .thumbnail img {
+                width: 100%;
+                height: 100%;
+                margin-bottom: 10px;
+            }
+
+        img #internet {
+            height: 120%;
+        }
+
+        .navbar {
+            margin-bottom: 0;
+            background-color: #f4511e;
+            z-index: 9999;
+            border: 0;
+            font-size: 15px !important;
+            line-height: 1.42857143 !important;
+            border-radius: 0;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        }
+
+        .slideanim {
+            visibility: visible;
+        }
+
+        p, li {
+            text-align: left;
+        }
+    </style>
+</head>
+<body>
+    <div id="portfolio" class="container-fluid text-center bg-grey">
+        <div class="row">
+            <h2>HTTPS</h2>
+            <ul>
+                <li>
+                    Is a protocol for secure communication over a computer network which is widely used on the internet
+                </li>
+                <br />
+                <li>
+                    HTTPS is typically notated by displaying a green lock in the web address bar:
+                    <img src="~/Images/HTTPSS.PNG" style="width:300px;display:block; margin-left:auto; margin-right:auto;" class="img-responsive" />
+                </li>
+
+                <br />
+                <li>
+                    No sensitive information should be typed into a page that is not secured by HTTPS. So, if there's a page requesting your information, like your phone number, your email, or even things like your credit card or social security number, make sure that it's secured by HTTPS before you type any of that information in, because when you do, if you do, you don't know where it's going to go.
+                </li>
+
+                <br />
+                <li>
+                    You don't know who could be looking at it, you don't know who could be intercepting it. So, you want to make sure that before you do it, that it's secured. It's kind of like if you had a credit card and you were in a crowded area, you wouldn't leave your credit card out on a table because anyone walking by could take a picture of your credit card, they could see it, and so forth.
+                </li>
+
+                <br />
+                <li>
+                    So, it works the same way with the internet, secure communication, and HTTPS. Even though a page is secured by HTTPS though, it does not automatically mean the page is safe. Sometimes people pretend to make it look like it's HTTPS. They put fake icons in places. They write on the screen that it's HTTPS. Sometimes, HTTPS has been compromised based off companies not doing it properly.
+                </li>
+
+                <br />
+                <li>
+                    So, you also want to make sure that the website is reputable, HTTPS exists, and then you have better piece of mind that it is safe for you to put your information in. Most browsers nowadays have begun to let users know, more easily, when they are on a nonsecure page.
+                </li>
+
+                <br />
+                <li>
+                    Lots of browsers pop up a red thing in your address bar saying, "This is not secure." Or they make you click on continue when you're going to a page that's not secure, letting you know that this is not a place where you should be entering in any sort of sensitive or confidential information.
+                </li>
+            </ul><br />
+
+            <img src="~/Images/HTTPSTips.PNG" style="width:450px;display:block; margin-left:auto; margin-right:auto;" class="img-responsive" /> <br />
+            @*<h2>Cybersecurity Threats: </h2>
+                <hr />
+                <iframe width="560" height="315" src="http://www.youtube.com/embed/dVW1FNWSaTg" frameborder="0" allowfullscreen></iframe>*@
+        </div>
+
+
+        <div class="row" style="position:relative; top:30px;">
+            <a class="btn btn-danger" href="@Url.Action("InternetProtectionView","InternetProtection")">Back &raquo;</a>
+        </div>
+    </div>
+
+</body>

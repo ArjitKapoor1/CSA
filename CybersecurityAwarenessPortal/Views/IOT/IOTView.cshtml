@@ -1,0 +1,126 @@
+﻿@{
+    ViewBag.Title = "Internet Of Things";
+}
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <style>
+        body {
+            font: 400 15px Lato, sans-serif;
+            line-height: 1.8;
+            color: #818181;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        }
+
+        h2 {
+            font-size: 24px;
+            color: blue;
+            font-weight: 500;
+            margin-bottom: 30px;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif
+        }
+
+        .container-fluid {
+            padding: 60px 50px;
+            top: 150px;
+        }
+
+        .bg-grey {
+            background-color: #f6f6f6;
+        }
+
+        .thumbnail {
+            padding: 0 0 15px 0;
+            border: none;
+            border-radius: 0;
+        }
+
+            .thumbnail img {
+                width: 100%;
+                height: 100%;
+                margin-bottom: 10px;
+            }
+
+        img #internet {
+            height: 120%;
+        }
+
+        .navbar {
+            margin-bottom: 0;
+            background-color: #f4511e;
+            z-index: 9999;
+            border: 0;
+            font-size: 15px !important;
+            line-height: 1.42857143 !important;
+            border-radius: 0;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        }
+
+        .slideanim {
+            visibility: visible;
+        }
+
+        p, li {
+            text-align: left;
+        }
+    </style>
+</head>
+<body>
+    <div id="portfolio" class="container-fluid text-center bg-grey">
+        <div class="row">
+            <h2>Internet Of Things (IOT)</h2>
+            <ul>
+                <li>
+                    The internet of things is basically any non-traditional devices that are connected to the internet so, it's not computers, tablets, or cellphones. Things like thermostats, cameras, baby monitors that connect to the internet. What they do is they provide an extra convenience to you.
+                </li>
+                <br />
+                <li>
+                    They allow you to see how your baby is doing when you're not at home. They allow you to change the temperature on your way home so that when you get there, you're much cooler. These things are all very convenient, but now it opens up a security hole because now your camera can be accessed via the internet. Your thermometer can be accessed via the internet. So, not only can you access it, there's a potential that someone else could access it as well.
+                </li>
+
+                <br />
+                <li>
+                    So, if you can connect to it to anywhere that means that anyone, if they simply guess your password, they can connect to it as well. Sometimes people forget to change the password on these devices. They take them out of the box, they plug them in, and then they connect to them. Or they might buy a camera and they might not realize that it contains web access.
+                </li>
+
+                <br />
+                <li>
+                    If it does contain web access and you're not going to use it, make sure to disable this feature. This helps prevent anybody from breaking into your devices because they won't be able to access them via the web. Make sure all of your devices are kept up to date.
+                    Just like computer or mobile devices, these devices have updates. The updates might not come out every week, but they typically come out a couple times a year.
+
+                </li>
+
+                <br />
+                <li>
+                    So, you always want to make sure that all of your internet of things devices like cameras, baby monitors, are running the latest version of the software. You can do this by looking at the vendor or manufacturer's website, or by logging into your device itself. If you don't know how to do this, I'd recommend you find out by reading the manual or looking at the vendor’s website. When you log in traditionally, they will tell you if the device is out of date or not. If they don't within their own console, go to the vendor's website and you'll be able to find out.
+                </li>
+
+                <br />
+                <li>
+                    If these devices are not kept up to date, it opens devices up to even more attack potential because typically these updates close security holes. Usually these updates are not just to add features or increase performance. Lots of times, these patches or updates are to close security holes that they've found over the years.
+                </li>
+
+                <br />
+                <li>
+                    Next, routers are the first line of defense to protect internet of things devices from exploitation. Pretty much everyone who has internet nowadays has a router. Lots of people don't realize that routers should immediately be changed from the default username and password to something unique. It doesn't mean the name of your wireless internet and your wireless password to get on the internet. We’re talking about the actual username and password that's utilized to log into the device itself, to make the changes to your wireless network. Lots of times, people just leave it as the default. Everyone out there who has an X brand router will know that password to log into yours.
+                </li>
+            </ul><br />
+
+            <img src="~/Images/IOTTips.PNG" style="width:450px;display:block; margin-left:auto; margin-right:auto;" class="img-responsive" /> <br />
+            @*<h2>Cybersecurity Threats: </h2>
+                <hr />
+                <iframe width="560" height="315" src="http://www.youtube.com/embed/dVW1FNWSaTg" frameborder="0" allowfullscreen></iframe>*@
+        </div>
+
+
+        <div class="row" style="position:relative; top:30px;">
+            <a class="btn btn-danger" href="@Url.Action("InternetProtectionView","InternetProtection")">Back &raquo;</a>
+        </div>
+    </div>
+
+</body>

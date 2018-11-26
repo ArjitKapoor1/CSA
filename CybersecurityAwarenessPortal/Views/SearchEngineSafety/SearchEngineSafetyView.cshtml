@@ -1,0 +1,127 @@
+﻿@{
+    ViewBag.Title = "Search Engine Safety";
+}
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <style>
+        body {
+            font: 400 15px Lato, sans-serif;
+            line-height: 1.8;
+            color: #818181;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        }
+
+        h2 {
+            font-size: 24px;
+            color: blue;
+            font-weight: 500;
+            margin-bottom: 30px;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif
+        }
+
+        .container-fluid {
+            padding: 60px 50px;
+            top: 150px;
+        }
+
+        .bg-grey {
+            background-color: #f6f6f6;
+        }
+
+        .thumbnail {
+            padding: 0 0 15px 0;
+            border: none;
+            border-radius: 0;
+        }
+
+            .thumbnail img {
+                width: 100%;
+                height: 100%;
+                margin-bottom: 10px;
+            }
+
+        img #internet {
+            height: 120%;
+        }
+
+        .navbar {
+            margin-bottom: 0;
+            background-color: #f4511e;
+            z-index: 9999;
+            border: 0;
+            font-size: 15px !important;
+            line-height: 1.42857143 !important;
+            border-radius: 0;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        }
+
+        .slideanim {
+            visibility: visible;
+        }
+
+        p, li {
+            text-align: left;
+        }
+    </style>
+</head>
+<body>
+    <div id="portfolio" class="container-fluid text-center bg-grey">
+        <div class="row">
+            <h2>Search Engine Safety</h2>
+            <ul>
+                <li>
+                   Nowadays, users really utilize search engines to ask every question they can think of.
+                    At work, they're typing in questions on how to do their job, what's this formula, what's that formula,
+                    what does this mean, how do I create this plan, how do I download a document or a template that looks
+                    like this already.
+                </li>
+                <br />
+                <li>
+                    Then, they're searching for things that they shouldn't be searching for at work; how do I download the newest CD, music, movie, or how do I watch this TV show? So, they're searching for things that they shouldn't search for, and they're searching for things that help them in their job.
+                </li>
+
+                <br />
+                <li>
+                    The problem is they're also going ahead and clicking on the search results, without first checking if it's a legitimate site. They just click on the link and then they see where it takes them. This also commonly happens on social media websites as well. Because their friend posted it, that means that it must be safe, so they click on the link and they get infected.
+                </li>
+
+                <br />
+                <li>
+                   It's the same thing with search engines as it is with social media. Just because it's posted by your friend, just because the result comes up from one of the search engines, doesn't mean that it's a legitimate site and it doesn't mean that's a safe site at all.
+                </li>
+
+                <br />
+                <li>
+                    Even if the website is reputable, the advertisement being displayed could be malicious and infect your computer or mobile device. So, you need to be concerned, not just with the fact that websites are legitimate, but be cautious about advertisements on the pages.
+                </li>
+
+                <br />
+                <li>
+                    If there are tons and tons of advertisements on the page, sometimes it can be bad news. Then, free things, such as music, movies, game cheats, et cetera, are very commonly filled with malware, and they are rarely what they say they are. So, not only is piracy a crime but when it comes to this, malicious actors pray on people who are looking for free things.
+                </li>
+
+                <br />
+                <li>
+                    Lots of times it doesn't even need to be illegal things or pirated things, like music or movies. It could be other things like documents to help you with your business, or free marketing plans and so forth. So, keep in mind that free things are rarely what they say that they are
+                </li>
+            </ul><br />
+
+            <img src="~/Images/SETips.PNG" style="width:450px;display:block; margin-left:auto; margin-right:auto;" class="img-responsive" /> <br />
+            @*<h2>Cybersecurity Threats: </h2>
+            <hr />
+            <iframe width="560" height="315" src="http://www.youtube.com/embed/dVW1FNWSaTg" frameborder="0" allowfullscreen></iframe>*@
+        </div>
+
+
+        <div class="row" style="position:relative; top:30px;">
+            <a class="btn btn-danger" href="@Url.Action("InternetProtectionView","InternetProtection")">Back &raquo;</a>
+        </div>
+    </div>
+
+</body>
