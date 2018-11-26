@@ -229,6 +229,7 @@
     <Compile Include="Controllers\PhishingController.cs" />
     <Compile Include="Controllers\QuizOptionsController.cs" />
     <Compile Include="Controllers\RegisterClientController.cs" />
+    <Compile Include="Controllers\ResetAttemptsController.cs" />
     <Compile Include="Controllers\SocialEngineeringController.cs" />
     <Compile Include="Controllers\ThreatsOverviewController.cs" />
     <Compile Include="Controllers\UserProgressController.cs" />
@@ -242,6 +243,7 @@
     <Compile Include="Models\QuestionRecords.cs" />
     <Compile Include="Models\QuizOptionsModel.cs" />
     <Compile Include="Models\RegisterClientModel.cs" />
+    <Compile Include="Models\ResetAttemptsModel.cs" />
     <Compile Include="Models\ThreatsOverviewModel.cs" />
     <Compile Include="Models\UserProgressModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -318,6 +320,7 @@
     <Content Include="Images\PS3.PNG" />
     <Content Include="Images\PS4.PNG" />
     <Content Include="Images\PS5.PNG" />
+    <Content Include="Images\Reset.png" />
     <Content Include="Images\SEng.PNG" />
     <Content Include="Images\Server.png" />
     <Content Include="Images\SocialEng.PNG" />
@@ -407,6 +410,7 @@
     <Content Include="Views\QuizOptions\QuizOptionsView.cshtml" />
     <Content Include="Views\UserProgress\UserProgressView.cshtml" />
     <Content Include="Views\Game\GamePage2.cshtml" />
+    <Content Include="Views\ResetAttempts\ResetAttemptsView.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

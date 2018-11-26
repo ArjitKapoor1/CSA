@@ -53,14 +53,14 @@
     </style>
 </head>
 @*<div class="jumbotron" style="background-image:url('../../Banking.png');">
-    <a href="https://www.tangerine.ca/en/index.html"> <img src="~/Tangerine.png" style="width:200px;" /> </a>
-    <p class="lead" style="color: white; font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif">
-        At Tangerine, we’re committed to helping Canadians live better lives.
-        It’s why we come in to work each and every day. And it’s our purpose for delivering forward banking to Canadians.
-        We can only do this by making some important promises, and more importantly, by keeping them!
-    </p>
-    <p style="font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif"><a href="https://www.tangerine.ca/en/index.html" class="btn btn-info btn-lg">Learn more &raquo;</a></p>
-</div>*@
+        <a href="https://www.tangerine.ca/en/index.html"> <img src="~/Tangerine.png" style="width:200px;" /> </a>
+        <p class="lead" style="color: white; font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif">
+            At Tangerine, we’re committed to helping Canadians live better lives.
+            It’s why we come in to work each and every day. And it’s our purpose for delivering forward banking to Canadians.
+            We can only do this by making some important promises, and more importantly, by keeping them!
+        </p>
+        <p style="font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif"><a href="https://www.tangerine.ca/en/index.html" class="btn btn-info btn-lg">Learn more &raquo;</a></p>
+    </div>*@
 
 
 <div id="portfolio" class="container-fluid text-center bg-grey">
@@ -68,7 +68,7 @@
     <div class="row text-center slideanim">
         <div class="col-sm-4">
             <div class="thumbnail">
-                <img src="~/Images/Server.png" alt="New York" style="width:300px;height:250px;">
+                <img src="~/Images/Server.png" alt="New York" style="width:250px;height:250px;">
                 <p><strong>Check Server Status On Azure </strong></p>
                 <a class="btn btn-info" href="https://portal.azure.com/" target="_blank">Check &raquo;</a>
             </div>
@@ -76,7 +76,7 @@
 
         <div class="col-sm-4">
             <div class="thumbnail">
-                <img src="~/Admin.png" alt="New York" style="width:300px;height:250px;">
+                <img src="~/Admin.png" alt="New York" style="width:250px;height:250px;">
                 <p><strong>Register A New Employee </strong></p>
                 <a class="btn btn-info" href="@Url.Action("RegisterClientView","RegisterClient")">Register &raquo;</a>
             </div>
@@ -84,12 +84,22 @@
 
         <div class="col-sm-4">
             <div class="thumbnail">
-                <img src="~/Images/Edit.png"  style="width:300px;height:250px;">
+                <img src="~/Images/Edit.png" style="width:250px;height:250px;">
                 <p><strong>Edit Quiz Options </strong></p>
                 <a class="btn btn-info" href="@Url.Action("QuizOptionsView","QuizOptions")">Edit &raquo;</a>
             </div>
         </div>
 
+    </div>
+
+    <div class="row text-center slideanim">
+        <div class="col-sm-4">
+            <div class="thumbnail">
+                <img src="~/Images/Reset.png" style="width:250px;height:250px;">
+                <p><strong>Reset Attempts For An Employee </strong></p>
+                <a class="btn btn-info" href="@Url.Action("ResetAttemptsView","ResetAttempts")">Reset &raquo;</a>
+            </div>
+        </div>
     </div>
 
 

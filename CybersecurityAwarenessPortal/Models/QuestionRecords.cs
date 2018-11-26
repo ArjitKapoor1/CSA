@@ -95,30 +95,30 @@ namespace CybersecurityAwarenessPortal.Models
             return id;
         }
 
-        public int GetNumOfModulesCompleted()
-        {
-            int id = new int();
-            string constr = ConfigurationManager.ConnectionStrings["DBConnection"].ConnectionString;
-            using (SqlConnection con = new SqlConnection(constr))
-            {
-                string query = "SELECT completed_modules FROM completeModules WHERE employee_id=@id";
-                using (SqlCommand cmd = new SqlCommand(query))
-                {
-                    cmd.Connection = con;
-                    con.Open();
-                    cmd.Parameters.AddWithValue("@id", empNum);
-                    using (SqlDataReader sdr = cmd.ExecuteReader())
-                    {
-                        while (sdr.Read())
-                        {
-                            id = sdr.GetInt32(0);
-                        }
-                    }
-                    con.Close();
-                }
-            }
-            return id;
-        }
+        //public int GetNumOfModulesCompleted()
+        //{
+        //    int id = new int();
+        //    string constr = ConfigurationManager.ConnectionStrings["DBConnection"].ConnectionString;
+        //    using (SqlConnection con = new SqlConnection(constr))
+        //    {
+        //        string query = "SELECT completed_modules FROM completeModules WHERE employee_id=@id";
+        //        using (SqlCommand cmd = new SqlCommand(query))
+        //        {
+        //            cmd.Connection = con;
+        //            con.Open();
+        //            cmd.Parameters.AddWithValue("@id", empNum);
+        //            using (SqlDataReader sdr = cmd.ExecuteReader())
+        //            {
+        //                while (sdr.Read())
+        //                {
+        //                    id = sdr.GetInt32(0);
+        //                }
+        //            }
+        //            con.Close();
+        //        }
+        //    }
+        //    return id;
+        //}
 
         public int GetPassPercent()
         {
@@ -150,13 +150,13 @@ namespace CybersecurityAwarenessPortal.Models
             string constr = ConfigurationManager.ConnectionStrings["DBConnection"].ConnectionString;
             using (SqlConnection con = new SqlConnection(constr))
             {
-                string query = "INSERT INTO completeModules VALUES (@id,@num)";
+                string query = "INSERT INTO completeModule VALUES (@id,@num,1)";
                 using (SqlCommand cmd = new SqlCommand(query))
                 {
                     cmd.Connection = con;
                     con.Open();
                     cmd.Parameters.AddWithValue("@id", empNum);
-                    cmd.Parameters.AddWithValue("@num", numOfCompletedModules + 1);
+                    cmd.Parameters.AddWithValue("@num", mod);
                     SqlDataReader sdr = cmd.ExecuteReader();
                     con.Close();
                 }

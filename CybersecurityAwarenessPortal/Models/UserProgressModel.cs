@@ -51,7 +51,7 @@ namespace CybersecurityAwarenessPortal.Models
             string constr = ConfigurationManager.ConnectionStrings["DBConnection"].ConnectionString;
             using (SqlConnection con = new SqlConnection(constr))
             {
-                string query = "SELECT completed_modules FROM completeModules WHERE employee_id=@id";
+                string query = "SELECT COUNT(*) FROM completeModule WHERE employee_id=@id AND completed=1";
                 using (SqlCommand cmd = new SqlCommand(query))
                 {
                     cmd.Connection = con;
