@@ -6,42 +6,31 @@ using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
 using Dropbox.Api;
-
+/// <summary>
+/// Cybersecurity Awareness Portal
+/// This Portal allows training of employees in the field of Cybersecurity
+/// Employees are evaluated in the form of a quiz game 
+/// The admin can track server stats, reigster employees etc. 
+/// Author: Arjit Kapoor
+/// </summary>
 namespace CybersecurityAwarenessPortal.Controllers
 {
+    /// <summary>
+    /// The controller is the class that binds the model and the view
+    /// It handles all the form post and get action
+    /// All the user entered values are handled here
+    /// </summary>
     public class ThreatsOverviewController : Controller
     {
+        /// <summary>
+        /// This View is called when the threats overview module is selected
+        /// It sets the Session value of the current module to the respective ID
+        /// </summary>
+        /// <returns></returns>
         public ActionResult ThreatsOverviewView()
         {
-            Session["moduleid"] = 1; 
-            //Models.ThreatsOverviewModel tom = new Models.ThreatsOverviewModel();
-            //List<SelectListItem> imgName = tom.ImageName;
-            //string accesstkn = ConfigurationManager.AppSettings["DropboxAccessToken"];
-            //tom.dbxuser = new DropboxClient(accesstkn);
-            //tom.dbxuser.Files.GetThumbnailAsync("RootCauses.png");
-          //  tom.dbxuser.Files.;
-
-            //Task task  = ListRootFolder(dbxuser);
+            Session["moduleid"] = 1;
             return View();
         }
-
-
-        //async Task ListRootFolder(DropboxClient dbx)
-        //{
-        //    var list = await dbx.Files.ListFolderAsync(string.Empty);
-
-        //    // show folders then files
-        //    foreach (var item in list.Entries.Where(i => i.IsFolder))
-        //    {
-        //        Models.ThreatsOverviewModel tom = new Models.ThreatsOverviewModel();
-        //        tom.ImageName.Add(Convert.ToSitem.Name);
-        //    }
-        //}
-    //    [HttpPost]
-    //    public ActionResult ThreatsOverviewView(GameController gm)
-    //    {
-    //        Session["moduleid"] = 1;
-    //        return RedirectToAction("GamePage2","Game");
-    //    }
     }
 }

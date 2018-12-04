@@ -6,9 +6,20 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
-
+/// <summary>
+/// Cybersecurity Awareness Portal
+/// This Portal allows training of employees in the field of Cybersecurity
+/// Employees are evaluated in the form of a quiz game 
+/// The admin can track server stats, reigster employees etc. 
+/// Author: Arjit Kapoor
+/// </summary>
 namespace CybersecurityAwarenessPortal.Models
 {
+    /// <summary>
+    /// The model class is that which defines all the user and data properties
+    /// It is the class where all the methods are defined 
+    /// It handles all the database interactions
+    /// </summary>
     public class RegisterClientModel
     {
         public int EmployeeID { get; set; }
@@ -38,6 +49,14 @@ namespace CybersecurityAwarenessPortal.Models
 
         public List<SelectListItem> DepartmentList { get; set; }
 
+        /// <summary>
+        /// Retreives the connection string stored in the Web.Config file
+        /// Defines the query to run and establishes a connection to the database
+        /// Gets the query result and stores it in the defined variable
+        /// </summary>
+        /// <returns>
+        /// The list of all departments 
+        /// </returns>
         public List<SelectListItem> GetDepartmentList()
         {
             List<SelectListItem> items = new List<SelectListItem>();
@@ -66,7 +85,14 @@ namespace CybersecurityAwarenessPortal.Models
         }
 
 
-
+        /// <summary>
+        /// Retreives the connection string stored in the Web.Config file
+        /// Defines the query to run and establishes a connection to the database
+        /// Gets the query result and stores it in the defined variable
+        /// </summary>
+        /// <returns>
+        /// The maximum number of employee ID existing 
+        /// </returns>
         public int GetMaxId()
         {
             int id = new int();
@@ -91,6 +117,14 @@ namespace CybersecurityAwarenessPortal.Models
             return id;
         }
 
+        /// <summary>
+        /// Retreives the connection string stored in the Web.Config file
+        /// Defines the query to run and establishes a connection to the database
+        /// Gets the query result and stores it in the defined variable
+        /// </summary>
+        /// <returns>
+        /// Inserts the new employee info as defined by the admin
+        /// </returns>
         public string RegisterClient()
         {
             string constr = ConfigurationManager.ConnectionStrings["DBConnection"].ConnectionString;
@@ -114,6 +148,14 @@ namespace CybersecurityAwarenessPortal.Models
             return "Success";
         }
 
+        /// <summary>
+        /// Retreives the connection string stored in the Web.Config file
+        /// Defines the query to run and establishes a connection to the database
+        /// Gets the query result and stores it in the defined variable
+        /// </summary>
+        /// <returns>
+        /// Creates a login for the newly register employee
+        /// </returns>
         public string CreateLogin()
         {
             string constr = ConfigurationManager.ConnectionStrings["DBConnection"].ConnectionString;

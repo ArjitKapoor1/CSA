@@ -7,9 +7,20 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using CybersecurityAwarenessPortal.Models;
-
+/// <summary>
+/// Cybersecurity Awareness Portal
+/// This Portal allows training of employees in the field of Cybersecurity
+/// Employees are evaluated in the form of a quiz game 
+/// The admin can track server stats, reigster employees etc. 
+/// Author: Arjit Kapoor
+/// </summary>
 namespace CybersecurityAwarenessPortal.Controllers
 {
+    /// <summary>
+    /// The controller is the class that binds the model and the view
+    /// It handles all the form post and get action
+    /// All the user entered values are handled here
+    /// </summary>
     public class GameController : Controller
     {
         // GET: Game
@@ -38,7 +49,10 @@ namespace CybersecurityAwarenessPortal.Controllers
 
 
         }
-
+        /// <summary>
+        /// This View is called when the take the quiz option is selected
+        /// </summary>
+        /// <returns></returns>
         public ActionResult GamePage2(QuestionRecords qr)
         {
             string mainConnection = ConfigurationManager.ConnectionStrings["DBConnection"].ConnectionString;
@@ -74,10 +88,6 @@ namespace CybersecurityAwarenessPortal.Controllers
 
             //-----------------------------------------------------------------//
 
-
-            //***************************************
-            //***************************************
-            //***************************************
             string adminPassMarkQuery = "SELECT * from quizOptions";
 
             SqlCom = new SqlCommand(adminPassMarkQuery);
@@ -175,31 +185,6 @@ namespace CybersecurityAwarenessPortal.Controllers
                 int empN = qr.GetEmployeeID();
                 qr.mod = Convert.ToInt32(Session["moduleid"]);
                 qr.attemptCount = qr.GetMaxAttemptsM1() + 1;
-                //string query2 = "SELECT * from userProgress where employee_id = " + empN + "";
-
-                //SqlCom = new SqlCommand(query2);
-                //SqlCom.Connection = sqlCon;
-
-                //sqlCon.Open();
-
-                //sdr = SqlCom.ExecuteReader();
-
-                //if (sdr.HasRows)
-                //{
-                //    while (sdr.Read())
-                //    {
-                //        qr.attemptCount = (int)sdr["attempt_num"] + 1;
-                //    }
-                //}
-                //else
-                //{
-                //    qr.attemptCount = 1;
-                //}
-                //sqlCon.Close();
-
-                ////-----------------------------------------------------------------//
-
-
                 
 
                 string QuestionQuery = "SELECT * FROM questions where sectionID = " + qr.mod + "";
@@ -303,33 +288,7 @@ namespace CybersecurityAwarenessPortal.Controllers
                 SqlCom.Connection = sqlCon;
 
                 sqlCon.Open();
-                /*SqlDataReader sdr = SqlCom.ExecuteReader();
-                if (sdr.HasRows)
-                {
-
-                    
-                    if (modSelect == 1) {
-                        query = "INSERT INTO testtable (test) values(@testinsert WHERE emp = " + empNum + "";
-                    }
-                    if (modSelect == 2)
-                    {
-                        query = "INSERT INTO testtable (test) values(@testinsert WHERE emp = " + empNum + "";
-                    }
-                    if (modSelect == 3)
-                    {
-                        query = "INSERT INTO testtable (test) values(@testinsert WHERE emp = " + empNum + "";
-                    }
-                    if (modSelect == 4)
-                    {
-                        query = "INSERT INTO testtable (test) values(@testinsert WHERE emp = " + empNum + "";
-                    }
-                    if (modSelect == 5)
-                    {
-                        query = "INSERT INTO testtable (test) values(@testinsert WHERE emp = " + empNum + "";
-                    }
-                    if (modSelect == 6)
-                    {
-                    }*/
+               
                 SqlCom = new SqlCommand(query, sqlCon);
 
                 //SqlCom.Parameters.Add(testP2);
